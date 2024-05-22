@@ -1,0 +1,42 @@
+@use "./mixins" as *;
+
+//Fonts
+
+
+/* Regular */
+@font-face {
+    font-family: "Titillium";
+    src: 
+     url("../assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf") format("truetype");
+    font-weight: 400;
+  }
+  
+  
+  /* Bold */
+  @font-face {
+    font-family: "Titillium";
+    src:
+      url("../assets/fonts/Titillium_Web/TitilliumWeb-Bold.ttf") format("truetype");
+    font-weight: 600;
+  }
+
+
+
+  
+  /* font setting */
+  .page__header {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 600;
+  }
+
+  .page__subheader{
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+
+  }
+  
+
+
+
