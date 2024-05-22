@@ -1,0 +1,97 @@
+@use "./mixins" as *;
+
+//Fonts
+
+
+/* Regular */
+@font-face {
+    font-family: "Titillium";
+    src: 
+     url("../assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf") format("truetype");
+    font-weight: 400;
+  }
+  
+  
+  /* Bold */
+  @font-face {
+    font-family: "Titillium";
+    src:
+      url("../assets/fonts/Titillium_Web/TitilliumWeb-Bold.ttf") format("truetype");
+    font-weight: 600;
+  }
+
+
+
+  
+  /* font setting */
+  .page__header {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 600;
+  }
+
+  .page__subheader{
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+
+  }
+  
+  .font__section-header {
+    font-size: 1.2rem;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+  
+  .font__sub-header {
+    font-size: 1.3rem;
+    line-height: 1.125;
+    font-weight: 700;
+  }
+  
+  .font__body {
+    font-size: 1.3rem;
+    line-height: 1.125;
+    font-weight: 400;
+  }
+  
+  .font__label{
+    font-size: 1.2rem;
+    line-height: 1.25;
+    font-weight:700;
+  }
+  
+  @include tablet {
+  
+  .page__header--tablet {
+    font-size: 3.3rem;
+    line-height: 2.75;
+    font-weight: 700;
+  }
+  
+  .font__section-header--tablet {
+    font-size: 1.2rem;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+  
+  .font__sub-header--tablet {
+    font-size: 1.4rem;
+    line-height: 1.375rem;
+    font-weight: 700;
+  }
+  
+  .font__body--tablet {
+    font-size: 1.4rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+  }
+  
+  .font__label--tablet{
+    font-size: 1.2rem;
+    line-height: 1.25;
+    font-weight:700;
+  }
+  }
+
+
