@@ -10,7 +10,7 @@ const Header = () => {
         <img src={Logo1x} alt="Instock Logo" />
       </div>
       <nav className="header__nav">
-        <Link to="/warehouses" className="header__link">Warehouses</Link>
+        <Link to="/" className="header__link">Warehouses</Link>
         <Link to="/inventory" className="header__link">Inventory</Link>
       </nav>
     </header>
