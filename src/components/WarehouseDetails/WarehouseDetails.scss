@@ -1,0 +1,37 @@
+.warehouseDetails {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+    margin-right: 8px;
+    outline: 1px solid red;
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        outline: blue;
+    }
+
+    &__info-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.nav {
+    &__edit-button {
+        margin-left: auto;
+    }
+}
+
+.info-container {
+
+    &__contact-container {
+        display: flex;
+        justify-content: space-between;
+        outline: 1px solid green;
+
+    }
+}
+
+
+

@@ -1,0 +1,26 @@
+.warehouseDetails {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+  margin-right: 8px;
+  outline: 1px solid red;
+}
+.warehouseDetails__nav {
+  display: flex;
+  flex-direction: row;
+  outline: blue;
+}
+.warehouseDetails__info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__edit-button {
+  margin-left: auto;
+}
+
+.info-container__contact-container {
+  display: flex;
+  justify-content: space-between;
+  outline: 1px solid green;
+}/*# sourceMappingURL=WarehouseDetails.css.map */
