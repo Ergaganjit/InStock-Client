@@ -15,44 +15,44 @@ function WarehouseInventory() {
                     + Add New Item
                 </button>
             </section>
-            <section className="warehouse-list">
-                <div className="warehouse-list__row warehouse-list__row--table-header-row">
-                    <div className="warehouse-list__col table-header">
+            <section className="inventory-list">
+                <div className="inventory-list__row inventory-list__row--table-headers">
+                    <div className="inventory-list__col table-header">
                         <p className="table-header__text">INVENTORY ITEM</p>
                         <div className="arrows">
                             <p className="arrows__up">^</p>
                             <p className="arrows__down">v</p>
                         </div>
                     </div>
-                    <div className="warehouse-list__col table-header">
+                    <div className="inventory-list__col table-header">
                         <p className="table-header__text">CATEGORY</p>
                         <div className="arrows">
                             <p className="arrows__up">^</p>
                             <p className="arrows__down">v</p>
                         </div>
                     </div>
-                    <div className="warehouse-list__col table-header">
+                    <div className="inventory-list__col table-header">
                         <p className="table-header__text">STATUS</p>
                         <div className="arrows">
                             <p className="arrows__up">^</p>
                             <p className="arrows__down">v</p>
                         </div>
                     </div>
-                    <div className="warehouse-list__col table-header">
+                    <div className="inventory-list__col table-header">
                         <p className="table-header__text">QTY</p>
                         <div className="arrows">
                             <p className="arrows__up">^</p>
                             <p className="arrows__down">v</p>
                         </div>
                     </div>
-                    <div className="warehouse-list__col table-header">
+                    <div className="inventory-list__col table-header">
                         <p className="table-header__text">WAREHOUSE</p>
                         <div className="arrows">
                             <p className="arrows__up">^</p>
                             <p className="arrows__down">v</p>
                         </div>
                     </div>
-                    <div className="warehouse-list__col table-header">
+                    <div className="inventory-list__col table-header">
                         <p className="table-header__text">ACTIONS</p>
                         <div className="arrows">
                             <p className="arrows__up">^</p>
@@ -60,7 +60,7 @@ function WarehouseInventory() {
                         </div>
                     </div>
                 </div>
-                <div className="warehouse-list__row warehouse-list__row--table-entry"></div>
+                <div className="inventory-list__row inventory-list__row--table-entry"></div>
             </section>
         </div>
     );

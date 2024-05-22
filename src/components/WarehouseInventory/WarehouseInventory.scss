@@ -1,0 +1,22 @@
+.warehouse-inventory {
+    .inventory-header {
+        &__title {}
+        &__search-input {}
+        &__add-button {}
+    }
+
+    .inventory-list {
+        &__row {}
+        &__row--table-headers {}
+        &__row--table-entry {}
+        &__col {}
+
+        .table-header {
+            &__text {}
+            .arrows {
+                &__up {}
+                &__down {}
+            }
+        }
+    }
+}
