@@ -12,9 +12,13 @@ import backArrow from '../../assets/Icons/arrow_back-24px.svg';
 import chevronIcon from '../../assets/Icons/chevron_right-24px.svg';
 import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import editIcon from '../../assets/Icons/edit-24px.svg';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { useState } from 'react';
+import axios from 'axios';
 
 export default function WarehouseDetails() {
+
+    // const params = useParams();
 
     // getWareHouseDetails -- pass as prop or fetch?
     const wareHouse = {
@@ -23,6 +27,14 @@ export default function WarehouseDetails() {
         contactName: "contact name",
         contactInfo: "contact information"
     };
+
+    // const [wareHouseDetails, setWareHouseDetails] = useState(null);
+
+    // async function fetchWareHouseDetails() {
+    //     // fetch warehouse details from API
+    //     const response = await axios.get(`/api/warehouses/${params.wareHouseId}`);
+    //     setWareHouseDetails(response.data);
+    // }
 
     return (
         <div className="warehouseDetails">
