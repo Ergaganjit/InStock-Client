@@ -27,17 +27,19 @@ export default function WarehouseDetails() {
     return (
         <div className="warehouseDetails">
 
-            <div className="warehouseDetails__nav">
-                <button className="nav__back-button">
-                    <img className="back-button__image" src={backArrow} />
-                </button>
-                <h1 className="nav__warehouse-location">{wareHouse.location}</h1>
-                <Link className="nav__edit-link" to='/warehouses/:warehouseId/edit'>
-                    <button className="edit-link__edit-button">
-                        <img className="edit-button__image" src={editIcon} alt="edit icon" />
-                        <label className="edit-button__label">Edit</label>
+            <div className="warehouseDetails__nav--bleed">
+                <div className="warehouseDetails__nav">
+                    <button className="nav__back-button">
+                        <img className="back-button__image" src={backArrow} />
                     </button>
-                </Link>
+                    <h1 className="nav__warehouse-location">{wareHouse.location}</h1>
+                    <Link className="nav__edit-link" to='/warehouses/:warehouseId/edit'>
+                        <button className="edit-link__edit-button">
+                            <img className="edit-button__image" src={editIcon} alt="edit icon" />
+                            <label className="edit-button__label">Edit</label>
+                        </button>
+                    </Link>
+                </div>
             </div>
 
             <div className="warehouseDetails__info-container">
