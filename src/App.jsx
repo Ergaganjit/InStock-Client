@@ -16,7 +16,6 @@ function App() {
         </Routes>
       </div>
     </BrowserRouter>
->>>>>>> develop
   );
 }
 

@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 
 export default function WarehouseDetails() {
 
-    const id = "placeholder";
+    // getWareHouseDetails -- pass as prop or fetch?
     const wareHouse = {
         location: "WASHINGTON",
         address: "address",
@@ -29,13 +29,15 @@ export default function WarehouseDetails() {
 
             <div className="warehouseDetails__nav">
                 <button className="nav__back-button">
-                    <img className="nav__back-button" src={backArrow} />
+                    <img className="back-button__image" src={backArrow} />
                 </button>
-                <h1 className="nav__warehouse">{wareHouse.location}</h1>
-                <button className="nav__edit-button">
-                    <img className="edit-button__image" src={editIcon} alt="edit icon" />
-                    <label className="edit-button__label">Edit</label>
-                </button>
+                <h1 className="nav__warehouse-location">{wareHouse.location}</h1>
+                <Link className="nav__edit-link" to='/warehouses/:warehouseId/edit'>
+                    <button className="edit-link__edit-button">
+                        <img className="edit-button__image" src={editIcon} alt="edit icon" />
+                        <label className="edit-button__label">Edit</label>
+                    </button>
+                </Link>
             </div>
 
             <div className="warehouseDetails__info-container">

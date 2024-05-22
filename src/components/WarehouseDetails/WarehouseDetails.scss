@@ -1,37 +1,51 @@
+@use '../../styles/colors' as colors;
+@use '../../styles/fonts' as fonts;
+@use '../../styles/mixins' as mixins;
+@use '../../styles/partials/button' as button;
+
+
 .warehouseDetails {
     display: flex;
     flex-direction: column;
     margin-left: 8px;
     margin-right: 8px;
-    outline: 1px solid red;
+    border-radius: 4px;
+    font-family: "Titillium";
+
+    @include mixins.tablet {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
 
     &__nav {
         display: flex;
         flex-direction: row;
-        outline: blue;
+        align-items: center;
+        box-shadow: 0 0 0 100vmax colors.$graphite;
+        clip-path: inset(0 -100vmax);
+
     }
 
     &__info-container {
         display: flex;
         flex-direction: column;
+        border-top: 2px solid colors.$cloud;
+        border-bottom: 2px solid colors.$cloud;
     }
 }
 
 .nav {
-    &__edit-button {
+    &__edit-link {
         margin-left: auto;
     }
 }
+
 
 .info-container {
 
     &__contact-container {
         display: flex;
         justify-content: space-between;
-        outline: 1px solid green;
 
     }
 }
-
-
-
