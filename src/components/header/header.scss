@@ -3,36 +3,46 @@
 
 .header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 10px;
     background-color: $graphite;
 
     @include tablet {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+        }
+
+    @include desktop {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 auto;
         }
   
     &__logo {
-      flex: 1;
+        margin-top: 24px;
+        margin-bottom: 16px;
 
       @include tablet {
-        margin-bottom: 10px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+        margin-left: 32px;
         }
       
-      img {
-        max-width: 100%;
-        height: auto;
-      }
+        img {
+          max-width: 100%;
+          height: auto;
+        }
     }
   
     &__nav {
-      display: flex;
-      gap: 15px;
-
-      @include tablet {
-        width: 100%;
         display: flex;
         justify-content: space-between;
+        padding: 0 16px;
+        width: 100%;
+
+      @include tablet {
+        justify-content: flex-end;
+        width: auto;
         }
     }
   
@@ -40,21 +50,29 @@
         text-decoration: none;
         color: $cloud;
         font-size: 14px;
+        height: 28px;
+        flex: 1;
+        text-align: center;
+        margin: 0 16px 16px 16px;
+        padding-top: 8px;
+
+        @include tablet {
+            height: 30px;
+            padding-top: 8px;
+            padding-left: 16px;
+            padding-right: 16px;
+            margin: 16px;
+        }
     
         &:hover {
           color: $white;
           text-decoration: underline;
         }
     
-        &.active {
-          background-color: $primary-color;
-          border-radius: 20px;
-          height: 38px;
-          padding: 0 16px;
-          display: flex;
-          align-items: center;
-          color: $white;
+        &--active {
+            background-color: $primary-color;
+            border-radius: 20px;
+            color: $white;
         }
-      }
     }
-  
+}
