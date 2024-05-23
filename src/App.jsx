@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "../src/components/header/header";
 import Footer from "../src/components/footer/footer";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
-import WarehouseList from "./components/DeleteWarehouseModal/DeleteWarehouseModal";
 import InventoryList from "./components/DeleteInventoryModal/DeleteInventoryModal";
 
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
@@ -16,7 +15,6 @@ function App() {
         <Routes>
           <Route path="/" element={<WarehousePage />} />
           <Route path="/inventory" element={<InventoryPage />} />
-          <Route path="/warehouses" element={<WarehouseList/>} />
           <Route path="/inventories" element={<InventoryList/>} />
         </Routes>
         <Footer />
