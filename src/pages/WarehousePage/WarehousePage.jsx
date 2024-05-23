@@ -6,7 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const WarehousePage = () => {
-  const urlForWarehouseList = "http://localhost:8000/api/warehouses";
+  const urlForWarehouseList = "http://localhost:8080/api/warehouses";
 
   const [warehouseToDisplay, setwarehouseToDisplay] = useState([]);
 
