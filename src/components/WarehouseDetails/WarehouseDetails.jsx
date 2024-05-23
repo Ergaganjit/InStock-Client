@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 export default function WarehouseDetails() {
 
     const params = useParams();
@@ -26,6 +27,7 @@ export default function WarehouseDetails() {
 
 
     return (
+        <>
         <div className="warehouseDetails">
 
             <div className="warehouseDetails__nav">
@@ -64,5 +66,7 @@ export default function WarehouseDetails() {
             </div>
 
         </div>
+
+        </>
     );
 }

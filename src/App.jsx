@@ -7,6 +7,7 @@ import WarehouseList from "./components/DeleteWarehouseModal/DeleteWarehouseModa
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import './App.scss';
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
+import EditWarehouseForm from "./components/EditWarehouseForm/EditWarehouseForm";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<WarehousePage />} />
           <Route path="/:wareHouseId" element={<WarehouseDetails />} />
+          <Route path="/:wareHouseId/edit" element={<EditWarehouseForm />} />
           <Route path="/inventory" element={<InventoryPage />} />
           <Route path="/warehouses" element={<WarehouseList/>} />
         </Routes>
