@@ -12,6 +12,9 @@ import InventoryPage from './pages/InventoryPage/InventoryPage.jsx';
 // import EditInventoryPage from './pages/EditInventoryPage/EditInventoryPage.jsx';
 // import AddInventoryPage from './pages/AddInventoryPage/AddInventoryPage.jsx';
 
+import WarehouseList from "./components/DeleteWarehouseModal/DeleteWarehouseModal";
+import InventoryList from "./components/DeleteInventoryModal/DeleteInventoryModal";
+
 function App() {
   return (
     <BrowserRouter>
@@ -27,6 +30,11 @@ function App() {
             {/* <Route path='/inventory/:id' element={<InventoryDetailsPage />} />
             <Route path='/inventory/edit/:id' element={<EditInventoryPage />} />
             <Route path='/inventory/add' element={<AddInventoryPage/>} /> */}
+
+            <Route path="/warehouses" element={<WarehouseList/>} />
+            <Route path="/inventories" element={<InventoryList/>} />
+
+
           </Routes>
         </div>
         <Footer />
