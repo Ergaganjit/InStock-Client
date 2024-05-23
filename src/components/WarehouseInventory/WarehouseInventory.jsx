@@ -1,4 +1,7 @@
 import './WarehouseInventory.scss';
+import { Link } from 'react-router-dom';
+import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
+import editIcon from '../../assets/Icons/edit-24px.svg';
 
 function WarehouseInventory() {
     function InventoryListMobile() {
@@ -6,21 +9,42 @@ function WarehouseInventory() {
             <section className="inventory-list inventory-list--mobile">
                 <article className="inventory-entry">
                     <div className="inventory-entry__item-status">
-                        <div className="inventory-item"></div>
-                        <div className="status"></div>
+                        <div className="item">
+                            <p className="inventory-entry__label">
+                                INVENTORY ITEM
+                            </p>
+                            <Link>
+                                <p className="item__link">
+                                    Television
+                                </p>
+                            </Link>
+                        </div>
+                        <div className="status">
+                            <p className="inventory-entry__label">STATUS</p>
+                            <p className="status__text">IN STOCK</p>
+                        </div>
                     </div>
                     <div className="inventory-entry__category-qty">
-                        <div className="category"></div>
-                        <div className="qty"></div>
+                        <div className="category">
+                            <p className="inventory-entry__label">CATEGORY</p>
+                            <p className="category__text">Electronics</p>
+                        </div>
+                        <div className="qty">
+                            <p className="inventory-entry__label">QTY</p>
+                            <p className="qty__text">500</p>
+                        </div>
                     </div>
                     <div className="inventory-entry__spacer-warehouse">
                         <div className="spacer"></div>
-                        <div className="warehouse"></div>
+                        <div className="warehouse">
+                            <p className="inventory-entry__label">WAREHOUSE</p>
+                            <p className="warehouse__name">Manhattan</p>
+                        </div>
                     </div>
                     <div className="inventory-entry__actions">
                         {/* action buttons are img or button with img? */}
-                        <img src="" alt="" className="delete-button" />
-                        <img src="" alt="" className="edit-button" />
+                        <img src={deleteIcon} alt="" className="delete-button" />
+                        <img src={editIcon} alt="" className="edit-button" />
                     </div>
                 </article>
             </section>

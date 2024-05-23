@@ -1,4 +1,5 @@
-@import "../../styles/fonts.scss";
+@import "../../styles/mixins";
+@import "../../styles/colors";
 
 .warehouse-inventory {
     .inventory-header {
@@ -13,21 +14,84 @@
     }
 
     .inventory-list {
+        // entries for mobile query
         .inventory-entry {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            //labels inside each paired div e.g. item-status
+            &__label {
+                
+            }
+
             &__item-status {
-            }
+                width: 100%;
+                display: flex;
+                justify-content: start;
 
+                .item {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                }
+
+                .status {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                }
+            }
+            
             &__category-qty {
-            }
+                width: 100%;
+                display: flex;
+                justify-content: start;
 
+                .category {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                }
+
+                .qty {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                }
+            }
+            
             &__spacer-warehouse {
-            }
+                width: 100%;
+                display: flex;
+                justify-content: start;
 
+                .spacer {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                }
+
+                .warehouse {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                }
+            }
+            
             &__actions {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
             }
         }
 
         &--mobile {
+            @include tablet {
+                display: none;
+            }
         }
 
         &--tablet-desktop {
