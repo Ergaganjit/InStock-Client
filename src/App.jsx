@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "../src/components/header/header";
 import Footer from "../src/components/footer/footer";
@@ -5,6 +6,7 @@ import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseList from "./components/DeleteWarehouseModal/DeleteWarehouseModal";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import './App.scss';
+import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 import EditWarehouseForm from "./components/EditWarehouseForm/EditWarehouseForm";
 
 function App() {
@@ -13,7 +15,9 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" element={<EditWarehouseForm />} />
+          <Route path="/" element={<WarehousePage />} />
+          <Route path="/:wareHouseId" element={<WarehouseDetails />} />
+          <Route path="/:wareHouseId/edit" element={<EditWarehouseForm />} />
           <Route path="/inventory" element={<InventoryPage />} />
           <Route path="/warehouses" element={<WarehouseList/>} />
         </Routes>
