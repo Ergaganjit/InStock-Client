@@ -1,10 +1,12 @@
+// src/components/WarehouseList/WarehouseList.jsx
+
 import "./WarehouseList.scss";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import arrowRight from "../../assets/Icons/chevron_right-24px.svg";
 import { useNavigate, NavLink } from "react-router-dom";
 
-const WarehouseList = ({ warehouses, setwarehouseToDisplay }) => {
+const WarehouseList = ({ warehouses, openModal }) => {
   const navigateEditPage = useNavigate();
 
   const handleEditClick = (id) => {
@@ -52,7 +54,7 @@ const WarehouseList = ({ warehouses, setwarehouseToDisplay }) => {
 
           <div className="warehouse-info__delete-edit">
             <img
-              onClick={() => handleEditClick(warehouse.id)}
+              onClick={() => openModal(warehouse)}
               src={deleteIcon}
               alt="Delete Icon"
             />
