@@ -1,0 +1,41 @@
+@import "../../styles/fonts.scss";
+
+.warehouse-inventory {
+    .inventory-header {
+        &__title {
+        }
+
+        &__search-input {
+        }
+
+        &__add-button {
+        }
+    }
+
+    .inventory-list {
+        .inventory-entry {
+            &__item-status {
+            }
+
+            &__category-qty {
+            }
+
+            &__spacer-warehouse {
+            }
+
+            &__actions {
+            }
+        }
+
+        &--mobile {
+        }
+
+        &--tablet-desktop {
+            display: none;
+
+            @include tablet {
+                display: block;
+            }
+        }
+    }
+}
