@@ -120,6 +120,7 @@
   &__title-warehouse {
     @include tablet {
       flex-basis: 20.5%;
+      font-size: 11px;
     }
 
     @include desktop {
@@ -129,11 +130,13 @@
   &__address {
     @include tablet {
       flex-basis: 20%;
+      font-size: 11px;
     }
   }
   &__contact-name {
     @include tablet {
       flex-basis: 23%;
+      font-size: 11px;
     }
     @include desktop {
       flex-basis: 23.5%;
@@ -142,6 +145,7 @@
   &__contact-info {
     @include tablet {
       flex-basis: 26%;
+      font-size: 11px;
     }
     @include desktop {
       flex-basis: 29.5%;
