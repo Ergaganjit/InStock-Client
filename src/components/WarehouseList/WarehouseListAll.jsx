@@ -5,7 +5,12 @@ import arrowRight from "../../assets/Icons/chevron_right-24px.svg";
 import { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 
-const WarehouseList = ({
+// import Modal from "react-modal";
+import DeleteWarehouseModal from "../DeleteWarehouseModal/DeleteWarehouseModal";
+
+// Modal.setAppElement("#root");
+
+const WareHouseListAll = ({
   id,
   warehouseName,
   warehouseAddress,
@@ -14,89 +19,75 @@ const WarehouseList = ({
   warehouseContact,
   warehousePhone,
   warehouseEmail,
-  setWarehouseToDisplay,
+  setwarehouseToDisplay,
   warehouses,
 }) => {
-  const navigate = useNavigate();
-  const [isDeleteConfirmVisible, setIsDeleteConfirmVisible] = useState(false);
+  const navigateEditPage = useNavigate();
 
-  // Handle edit button click
   const handleEditClick = () => {
-    navigate(`/warehouse/edit/${id}`);
+    navigateEditPage(`/warehouse/edit/${id}`);
   };
 
-  // Handle delete button click
-  const handleDeleteClick = () => {
-    setIsDeleteConfirmVisible(true);
+  //Delete Warehouse Modal Window
+  const [isOpen, setIsOpen] = useState(false);
+  //Open Modal Event Handler
+  const openModal = () => {
+    setIsOpen(true);
   };
-
-  // Handle delete confirmation
-  const confirmDelete = () => {
-    // Perform delete operation here
-    setIsDeleteConfirmVisible(false);
-    // Update displayed warehouses after deletion
-    setWarehouseToDisplay(
-      warehouses.filter((warehouse) => warehouse.id !== id)
-    );
-  };
-
-  // Handle cancel delete
-  const cancelDelete = () => {
-    setIsDeleteConfirmVisible(false);
+  //Close Modal Handler
+  const closeModal = () => {
+    setIsOpen(false);
+    navigateEditPage("/");
   };
 
   return (
-    <div className="warehouse">
-      <div className="warehouse__details">
-        <p className="warehouse__label">WAREHOUSE</p>
-        <NavLink className="warehouse__name-link" to={`/warehouse/${id}`}>
-          <div className="warehouse__name-container">
-            <p className="warehouse__name">{warehouseName}</p>
+    <div className="warehouse-info">
+      <div className="warehouse-info__mobile-flex-first">
+        <p className="warehouse-info__title-warehouse-heading">WAREHOUSE</p>
+        <NavLink
+          className="warehouse-info__name-container"
+          to={`/warehouse/${id}`}
+        >
+          <div className="warehouse-info__name-container">
+            <p className="warehouse-info__name">{warehouseName}</p>
             <img
-              className="warehouse__arrow"
+              className="warehouse-info__arrow"
               src={arrowRight}
               alt="Arrow Right"
-            />
+            ></img>
           </div>
         </NavLink>
-        <p className="warehouse__label">ADDRESS</p>
-        <p className="warehouse__address">{`${warehouseAddress}, ${city}, ${country}`}</p>
+        <p className="warehouse-info__address-heading">ADDRESS</p>
+        <p className="warehouse-info__address">{`${warehouseAddress}, ${city}, ${country}`}</p>
       </div>
 
-      <div className="warehouse__contact">
-        <p className="warehouse__label">CONTACT NAME</p>
-        <p className="warehouse__contact-name">{warehouseContact}</p>
-        <p className="warehouse__label">CONTACT INFORMATION</p>
-        <div className="warehouse__contact-info">
-          <p className="warehouse__phone">{warehousePhone}</p>
-          <p className="warehouse__email">{warehouseEmail}</p>
+      <div className="warehouse-info__mobile-flex-second">
+        <p className="warehouse-info__contact-name-heading">CONTACT NAME</p>
+        <p className="warehouse-info__contact-name">{warehouseContact}</p>
+        <p className="warehouse-info__contact-info-heading">
+          CONTACT INFORMATION
+        </p>
+        <div className="warehouse-info__phone-email-container">
+          <p className="warehouse-info__phone">{warehousePhone}</p>
+          <p className="warehouse-info__email">{warehouseEmail}</p>
         </div>
       </div>
 
-      <div className="warehouse__actions">
-        <img
-          className="warehouse__icon"
-          onClick={handleDeleteClick}
-          src={deleteIcon}
-          alt="Delete Icon"
-        />
-        <img
-          className="warehouse__icon"
-          onClick={handleEditClick}
-          src={editIcon}
-          alt="Edit Icon"
-        />
+      <div className="warehouse-info__delete-edit">
+        <img onClick={openModal} src={deleteIcon} alt="Delete Icon" />
+        <img onClick={handleEditClick} src={editIcon} alt="Edit Icon" />
       </div>
 
-      {isDeleteConfirmVisible && (
-        <div className="warehouse__delete-confirm">
-          <p>Are you sure you want to delete {warehouseName}?</p>
-          <button onClick={confirmDelete}>Yes</button>
-          <button onClick={cancelDelete}>No</button>
-        </div>
-      )}
+      <DeleteWarehouseModal
+        isOpen={isOpen}
+        closeModal={closeModal}
+        id={id}
+        warehouseName={warehouseName}
+        setwarehouseToDisplay={setwarehouseToDisplay}
+        warehouses={warehouses}
+      />
     </div>
   );
 };
 
-export default WarehouseList;
+export default WareHouseListAll;

@@ -1,6 +1,6 @@
 import "./WarehouseList.scss";
 
-import WarehouseListAll from "./WareHouseListAll.js";
+import WarehouseListAll from "./WarehouseListAll";
 
 const WarehouseList = ({ warehouses, setwarehouseToDisplay }) => {
   return (
