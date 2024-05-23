@@ -40,7 +40,7 @@ const DeleteWarehouseModal = () => {
       setWarehouses(warehouses.filter(wh => wh.id !== warehouseToDelete.id));
       closeModal();
     } catch (error) {
-      console.error('Error deleting warehouse', error);
+      console.error('Error in deleting warehouse', error);
     }
   };
 
