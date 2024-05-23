@@ -8,41 +8,40 @@ function WarehouseInventory() {
         return (
             <section className="inventory-list inventory-list--mobile">
                 <article className="inventory-entry">
-                    <div className="inventory-entry__item-status">
-                        <div className="item">
+                    <div className="inventory-entry__row inventory-entry__row--item-status">
+                        <div className="inventory-entry__col inventory-entry__col--item">
                             <p className="inventory-entry__label">
                                 INVENTORY ITEM
                             </p>
-                            <Link>
-                                <p className="item__link">
+                            <Link className="inventory-entry__link">
+                                <p className="inventory-entry__col-data inventory-entry__col-data--item">
                                     Television
                                 </p>
                             </Link>
                         </div>
-                        <div className="status">
+                        <div className="inventory-entry__col inventory-entry__col--status">
                             <p className="inventory-entry__label">STATUS</p>
-                            <p className="status__text">IN STOCK</p>
+                            <p className="inventory-entry__col-data inventory-entry__col-data--status">IN STOCK</p>
                         </div>
                     </div>
-                    <div className="inventory-entry__category-qty">
-                        <div className="category">
+                    <div className="inventory-entry__row inventory-entry__row--category-qty">
+                        <div className="inventory-entry__col inventory-entry__col--category">
                             <p className="inventory-entry__label">CATEGORY</p>
-                            <p className="category__text">Electronics</p>
+                            <p className="inventory-entry__col-data inventory-entry__col-data--category">Electronics</p>
                         </div>
-                        <div className="qty">
+                        <div className="inventory-entry__col inventory-entry__col--qty">
                             <p className="inventory-entry__label">QTY</p>
-                            <p className="qty__text">500</p>
+                            <p className="inventory-entry__col-data inventory-entry__col-data--qty">500</p>
                         </div>
                     </div>
-                    <div className="inventory-entry__spacer-warehouse">
-                        <div className="spacer"></div>
-                        <div className="warehouse">
+                    <div className="inventory-entry__row inventory-entry__row--spacer-warehouse">
+                        <div className="inventory-entry__col inventory-entry__col--spacer"></div>
+                        <div className="inventory-entry__col inventory-entry__col--warehouse">
                             <p className="inventory-entry__label">WAREHOUSE</p>
-                            <p className="warehouse__name">Manhattan</p>
+                            <p className="inventory-entry__col-data">Manhattan</p>
                         </div>
                     </div>
-                    <div className="inventory-entry__actions">
-                        {/* action buttons are img or button with img? */}
+                    <div className="inventory-entry__row inventory-entry__row--actions">
                         <img src={deleteIcon} alt="" className="delete-button" />
                         <img src={editIcon} alt="" className="edit-button" />
                     </div>
