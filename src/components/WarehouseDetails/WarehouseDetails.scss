@@ -9,19 +9,17 @@
     flex-direction: column;
     margin-left: 8px;
     margin-right: 8px;
-    // border-radius: 4px;
-    // background-color: blue;
+    background-color: colors.$white;
+    border-radius: 4px 4px 0 0;
     font-family: "Titillium";
  
 
     @include mixins.tablet {
-        margin-left: 24px;
-        margin-right: 24px;
+        margin-left: 32px;
+        margin-right: 32px;
     }
 
     @include mixins.desktop {
-        // margin-left: 80px;
-        // margin-right: 80px;
         margin-left: 0;
         margin-right: 0;
     }
@@ -30,10 +28,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        // box-shadow: 0 0 0 100vmax colors.$graphite;
-        // clip-path: inset(0 -100vmax);
-        background-color: colors.$white;
-        border-radius: 4px 4px 0 0;;
+
 
         @include mixins.tablet {
             padding-left: 24px;
@@ -47,9 +42,7 @@
             margin-right: 80px;
         }
 
-        &--bleed {
-            background-color: colors.$graphite;
-        }
+ 
 
     }
 
@@ -67,6 +60,8 @@
             padding-left: 24px;
             padding-right: 24px;
             border-bottom: none;
+            justify-content: baseline;
+            align-items: baseline;
         }
 
         @include mixins.desktop {
@@ -91,6 +86,7 @@
         @include mixins.tablet {
             border-right: 1px solid colors.$cloud;
             padding-right: 15%;
+        
         }
 
         @include mixins.desktop {
@@ -114,3 +110,18 @@
 
     }
 }
+
+.address-container {
+    &__inner-container {
+        display: flex;
+        flex-direction: row;
+
+        @include mixins.tablet {
+            flex-direction: column;
+            line-height: 0px;
+        }
+
+    }
+
+}
+
