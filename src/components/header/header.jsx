@@ -1,17 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './header.scss';
-import Logo1x from '../../assets/Logo/InStock-Logo_1x.png';
+import LogoSvg from '../../assets/Logo/InStock-Logo.svg';
 
 const Header = () => {
   return (
     <header className="header">
       <div className="header__logo">
-        <img src={Logo1x} alt="Instock Logo" />
+        <img src={LogoSvg} alt="Instock Logo" />
       </div>
       <nav className="header__nav">
-        <Link to="/" className="header__link">Warehouses</Link>
-        <Link to="/inventory" className="header__link">Inventory</Link>
+        <NavLink
+        to="/"
+        className={({ isActive }) => 
+            isActive ? "header__link header__link--active" : "header__link"
+          }
+        >
+          Warehouses
+        </NavLink>
+        <NavLink
+          to="/inventory"
+          className={({ isActive }) => 
+            isActive ? "header__link header__link--active" : "header__link"
+          }
+        >
+          Inventory
+        </NavLink>
       </nav>
     </header>
   );
