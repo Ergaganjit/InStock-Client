@@ -1,3 +1,5 @@
+// src/components/DeleteWarehouseModal.js
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
@@ -62,7 +64,7 @@ const DeleteWarehouseModal = () => {
         onRequestClose={closeModal}
         contentLabel="Confirm Delete"
         className="modal"
-        overlayClassName="overlay"
+        overlayClassName="overlay" // Added overlay class
       >
         <div className="modal-header">
           <h2>Delete {warehouseToDelete?.warehouse_name} Warehouse?</h2>
