@@ -12,6 +12,9 @@ import InventoryPage from './pages/InventoryPage/InventoryPage.jsx';
 // import EditInventoryPage from './pages/EditInventoryPage/EditInventoryPage.jsx';
 // import AddInventoryPage from './pages/AddInventoryPage/AddInventoryPage.jsx';
 
+import WarehouseList from "./components/DeleteWarehouseModal/DeleteWarehouseModal";
+import InventoryList from "./components/DeleteInventoryModal/DeleteInventoryModal";
+
 function App() {
   return (
     <BrowserRouter>
