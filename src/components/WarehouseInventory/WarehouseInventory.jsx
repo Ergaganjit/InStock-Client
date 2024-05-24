@@ -174,7 +174,7 @@ function WarehouseInventory() {
                         + Add New Item
                     </button>
                 </section>
-                {/* one of the following is displayed based on media query */}
+                {/* only one InventoryList is displayed based on media query */}
                 <InventoryListMobile />
                 <InventoryListTabletDesktop />
             </div>
