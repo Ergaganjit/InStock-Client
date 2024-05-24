@@ -14,6 +14,7 @@ function InventoryList({ inventory, warehouses }) {
             warehouses
         }) {
             const selectedWarehouse = warehouses.find((currentWarehouse) => currentWarehouse.id === warehouse);
+            const outOfStockClass = (status === "In Stock" ? "" : "out-of-stock");
 
             return (
                 <article className="inventory-entry">
@@ -30,7 +31,7 @@ function InventoryList({ inventory, warehouses }) {
                         </div>
                         <div className="inventory-entry__col inventory-entry__col--status">
                             <p className="inventory-entry__label">STATUS</p>
-                            <p className="inventory-entry__col-data inventory-entry__col-data--status">
+                            <p className={`inventory-entry__col-data inventory-entry__col-data--status ${outOfStockClass}`}>
                                 {status}
                             </p>
                         </div>
@@ -101,6 +102,7 @@ function InventoryList({ inventory, warehouses }) {
             warehouses
         }) {
             const selectedWarehouse = warehouses.find((currentWarehouse) => currentWarehouse.id === warehouse);
+            const outOfStockClass = (status === "In Stock" ? "" : "out-of-stock");
 
             return (
                 <div className="inventory-list__row inventory-list__row--table-entry">
@@ -117,7 +119,7 @@ function InventoryList({ inventory, warehouses }) {
                         </p>
                     </div>
                     <div className="inventory-list__col table-cell">
-                        <p className="table-cell__data table-cell__data--status">
+                        <p className={`table-cell__data table-cell__data--status ${outOfStockClass}`}>
                             {status}
                         </p>
                     </div>
