@@ -66,18 +66,6 @@ const EditInventoryForm = ({ warehouseFilter, inventoryToDisplay }) => {
       .catch((error) => console.log(error));
   };
 
-  if (
-    !warehouseName ||
-    !itemName ||
-    !description ||
-    !category ||
-    !status ||
-    quantity === null ||
-    !initWarehouseName
-  ) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <div className="inventory-edit-form-top">
       <Link to="/inventory">

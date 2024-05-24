@@ -8,6 +8,10 @@
     border-bottom: 1px solid $cloud;
     padding: 0 1rem;
     gap: 1rem;
+
+    @include desktop {
+      padding-left: 10%;
+    }
   }
 }
 
@@ -16,6 +20,7 @@ a {
   font-size: 1.2rem;
   font-family: "Titillium Web", sans-serif;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .inventory-edit-form {
@@ -32,6 +37,8 @@ a {
 
   @include desktop {
     gap: 6rem;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
   &__message {
