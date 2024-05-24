@@ -1,77 +1,123 @@
-.modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 600px;
-    height: 35%;
-    max-height: 200px;
-    background: #fff;
-    padding: 30px;  // Increased padding for inner modal text
-    border-radius: 6px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-  
-    .modal-header {
+// src/components/DeleteWarehouseModal.scss
+
+.warehouse-list {
+  padding: 20px;
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-  
-      h2 {
-        margin: 0;
-        font-size: 2rem;
-        text-align: left;
-        font-weight: 600;
-      }
-  
-      .close-button {
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-      }
-    }
-  
-    p {
-      margin-bottom: 20px;
-      font-size: 1rem;
-      color: #333;
-      text-align: left;
-      padding: 20px 0;  // Increased padding for inner modal text
-    }
-  
-    .modal-buttons {
-      display: flex;
-      justify-content: flex-end;
-  
+      flex-direction: column;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #f9f9f9;
+
       button {
-        margin-left: 10px;
-        padding: 10px 20px;
+        margin-top: 10px;
+        padding: 10px;
         font-size: 1rem;
         border: none;
-        border-radius: 30px;  // Increase border-radius for round corners
+        border-radius: 30px; // Increase border-radius for round corners
         cursor: pointer;
         transition: background 0.3s ease;
-  
-        &:first-of-type {
-          border: 1px solid #ccc;  // Add border to cancel button
-          background: none;
-          color: #000;
-          &:hover {
-            background: #f0f0f0;
-          }
-        }
-  
-        &:last-of-type {
-          background: #d9534f;
-          color: #fff;
-          &:hover {
-            background: #c9302c;
-          }
+        background: #d9534f;
+        color: #fff;
+
+        &:hover {
+          background: #c9302c;
         }
       }
     }
   }
-  
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  height: 35%;
+  max-height: 200px;
+  background: #fff;
+  padding: 30px; // Increased padding for inner modal text
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h2 {
+      margin: 0;
+      font-size: 2rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .close-button {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+
+  p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
+    padding: 20px 0; // Increased padding for inner modal text
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px; // Increase border-radius for round corners
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:first-of-type {
+        border: 1px solid #ccc; // Add border to cancel button
+        background: none;
+        color: #000;
+        &:hover {
+          background: #f0f0f0;
+        }
+      }
+
+      &:last-of-type {
+        background: #d9534f;
+        color: #fff;
+        &:hover {
+          background: #c9302c;
+        }
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(16, 15, 15, 0.5); // Darken the background
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
