@@ -199,6 +199,22 @@
     margin-top: 0;
   }
 }
+.warehouse-name__input--error {
+  border: 1px solid #C94515;
+}
+
+.street-address__input--error {
+  border: 1px solid #C94515;
+}
+
+.city__input--error {
+  border: 1px solid #C94515;
+}
+
+.country__input--error {
+  border: 1px solid #C94515;
+}
+
 .contact-details__heading {
   font-family: "Titillium";
   font-size: 20px;
@@ -211,6 +227,22 @@
     margin-top: 0;
   }
 }
+.contact-name__input--error {
+  border: 1px solid #C94515;
+}
+
+.position__input--error {
+  border: 1px solid #C94515;
+}
+
+.phone-number__input--error {
+  border: 1px solid #C94515;
+}
+
+.email__input--error {
+  border: 1px solid #C94515;
+}
+
 .form-buttons__cancel-button {
   display: flex;
   flex-direction: row;

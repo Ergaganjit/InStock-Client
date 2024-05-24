@@ -264,6 +264,10 @@
     &__input {
         @extend %M-P2;
         @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
     }
 }
 
@@ -277,6 +281,10 @@
     &__input {
         @extend %M-P2;
         @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
     }
 }
 
@@ -290,6 +298,10 @@
     &__input {
         @extend %M-P2;
         @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
     }
 }
 
@@ -304,6 +316,9 @@
         @extend %M-P2;
         @extend %form-field;
 
+        &--error {
+            border: 1px solid colors.$red;
+        }
     }
 }
 
@@ -350,6 +365,10 @@
     &__input {
         @extend %M-P2;
         @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
     }
 }
 
@@ -363,6 +382,10 @@
     &__input {
         @extend %M-P2;
         @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
     }
 }
 
@@ -376,6 +399,10 @@
     &__input {
         @extend %M-P2;
         @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
     }
 }
 
@@ -389,6 +416,10 @@
     &__input {
         @extend %M-P2;
         @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
     }
 }
 
