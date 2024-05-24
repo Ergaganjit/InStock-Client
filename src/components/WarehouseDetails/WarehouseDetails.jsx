@@ -4,6 +4,7 @@ import editIcon from '../../assets/Icons/edit-24px.svg';
 import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+// import InventoryList from '../InventoryList/InventoryList';
 
 
 export default function WarehouseDetails() {
@@ -34,7 +35,7 @@ export default function WarehouseDetails() {
                 <button className="nav__back-button">
                     <img className="back-button__image" src={backArrow} />
                 </button>
-                <h1 className="nav__warehouse-location">{wareHouseDetails?.warehouse_name}</h1>
+                <h1 className="nav__warehouse-heading">{wareHouseDetails?.warehouse_name}</h1>
                 <Link className="nav__edit-link" to={`/${wareHouseDetails?.id}/edit`}>
                     <button className="edit-link__edit-button">
                         <img className="edit-button__image" src={editIcon} alt="edit icon" />
@@ -66,6 +67,8 @@ export default function WarehouseDetails() {
             </div>
 
         </div>
+
+        {/* <InventoryList /> */}
 
         </>
     );
