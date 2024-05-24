@@ -10,7 +10,8 @@
     gap: 1rem;
 
     @include desktop {
-      padding-left: 10%;
+      margin-left: 8%;
+      margin-right: 8%;
     }
   }
 }
@@ -65,6 +66,8 @@ a {
 
     @include desktop {
       flex-basis: 50%;
+      padding-right: 3rem;
+      border-right: 1px solid $cloud;
     }
   }
 
