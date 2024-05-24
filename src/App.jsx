@@ -4,6 +4,7 @@ import Footer from "../src/components/footer/footer";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseList from "./components/DeleteWarehouseModal/DeleteWarehouseModal";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
+import EditInventoryPage from "./pages/EditInventoryPage/EditInventoryPage";
 import './App.scss';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<WarehousePage />} />
           <Route path="/inventory" element={<InventoryPage />} />
           <Route path="/warehouses" element={<WarehouseList/>} />
+          <Route path="/inventory/edit/:id" element={<EditInventoryPage />} />
         </Routes>
         <Footer />
       </div>

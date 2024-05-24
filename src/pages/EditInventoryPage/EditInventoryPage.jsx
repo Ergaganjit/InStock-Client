@@ -25,9 +25,9 @@ const EditInventoryPage = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  if (!inventoryToDisplay || !warehouseToDisplay) {
-    return <div>Loading...</div>;
-  }
+  // if (!inventoryToDisplay || !warehouseToDisplay) {
+  //   return <div>Loading...</div>;
+  // }
 
   const warehouseFilter = warehouseToDisplay.map((warehouse) => ({
     warehouse_name: warehouse.warehouse_name,
