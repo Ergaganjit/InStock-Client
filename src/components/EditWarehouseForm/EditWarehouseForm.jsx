@@ -32,12 +32,12 @@ export default function EditWarehouseForm() {
                 console.log(wareHouseDetails);
                 await axios.put(`${process.env.REACT_APP_API_URL}/api/warehouses/${params.wareHouseId}`, wareHouseDetails);
                 console.log("Warehouse details updated successfully.");
-                navigate(`/${params.wareHouseId}`);
+                navigate(`/warehouse/${params.wareHouseId}`);
             } catch (error) {
                 console.log("Error updating warehouse details.");
             }
         } else if (button === 'cancel') {
-            navigate(`/${params.wareHouseId}`);
+            navigate(`/warehouse/${params.wareHouseId}`);
         }
     }
 

@@ -14,6 +14,7 @@ import InventoryPage from './pages/InventoryPage/InventoryPage.jsx';
 import WarehouseList from "./components/DeleteWarehouseModal/DeleteWarehouseModal";
 import InventoryList from "./components/DeleteInventoryModal/DeleteInventoryModal";
 import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails.jsx';
+import EditWarehouseForm from './components/EditWarehouseForm/EditWarehouseForm.jsx';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
         <div className="routes-container">
           <Routes>
             <Route path='/' element={<WarehousePage/>} />
-            <Route path='/warehouse/:wareHouseId' element={<WarehouseDetails />} />
+            <Route path='/warehouse/:wareHouseId' element={<WarehouseDetails/>} />
+            <Route path='/warehouse/:wareHouseId/edit' element={<EditWarehouseForm/>} />
             {/*
             <Route path='/warehouse/edit/:id' element={<EditWarehousePage/>} />
             <Route path='/warehouse/add' element={<AddWarehousePage />} /> */}
