@@ -23,7 +23,7 @@ function App() {
         <div className="routes-container">
           <Routes>
             <Route path='/' element={<WarehousePage/>} />
-            <Route path='/warehouses/:wareHouseId' element={<WarehouseDetails />} />
+            <Route path='/warehouse/:wareHouseId' element={<WarehouseDetails />} />
             {/*
             <Route path='/warehouse/edit/:id' element={<EditWarehousePage/>} />
             <Route path='/warehouse/add' element={<AddWarehousePage />} /> */}
