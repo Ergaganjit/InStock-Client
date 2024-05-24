@@ -4,18 +4,16 @@ import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import editIcon from '../../assets/Icons/edit-24px.svg';
 
 function InventoryList({ inventory, warehouses }) {
-    function InventoryListMobile({ inventory, warehouses }) {
+    function InventoryListMobile({ inventory }) {
         function InventoryListEntry({
             itemName,
             status,
             category,
             quantity,
-            warehouse,
-            warehouses
+            warehouse
         }) {
-            const selectedWarehouse = warehouses.find((currentWarehouse) => currentWarehouse.id === warehouse);
             const outOfStockClass = (status === "In Stock" ? "" : "out-of-stock");
-
+    
             return (
                 <article className="inventory-entry">
                     <div className="inventory-entry__row inventory-entry__row--item-status">
@@ -55,7 +53,7 @@ function InventoryList({ inventory, warehouses }) {
                         <div className="inventory-entry__col inventory-entry__col--warehouse">
                             <p className="inventory-entry__label">WAREHOUSE</p>
                             <p className="inventory-entry__col-data">
-                                {selectedWarehouse.warehouse_name}
+                                {warehouse}
                             </p>
                         </div>
                     </div>
@@ -84,24 +82,21 @@ function InventoryList({ inventory, warehouses }) {
                         status={item.status}
                         category={item.category}
                         quantity={item.quantity}
-                        warehouse={item.warehouse_id}
-                        warehouses={warehouses}
+                        warehouse={item.warehouse_name}
                     />
                 ))}
             </section>
         );
     }
 
-    function InventoryListTabletDesktop({ inventory, warehouses }) {
+    function InventoryListTabletDesktop({ inventory }) {
         function InventoryListTableEntry({
             itemName,
             status,
             category,
             quantity,
-            warehouse,
-            warehouses
+            warehouse
         }) {
-            const selectedWarehouse = warehouses.find((currentWarehouse) => currentWarehouse.id === warehouse);
             const outOfStockClass = (status === "In Stock" ? "" : "out-of-stock");
 
             return (
@@ -130,7 +125,7 @@ function InventoryList({ inventory, warehouses }) {
                     </div>
                     <div className="inventory-list__col table-cell">
                         <p className="table-cell__data table-cell__data--warehouse">
-                            {selectedWarehouse.warehouse_name}
+                            {warehouse}
                         </p>
                     </div>
                     <div className="inventory-list__col table-cell">
@@ -198,8 +193,7 @@ function InventoryList({ inventory, warehouses }) {
                         status={item.status}
                         category={item.category}
                         quantity={item.quantity}
-                        warehouse={item.warehouse_id}
-                        warehouses={warehouses}
+                        warehouse={item.warehouse_name}
                     />
                 ))}
             </section>
