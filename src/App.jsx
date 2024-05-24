@@ -14,7 +14,6 @@ import InventoryPage from './pages/InventoryPage/InventoryPage.jsx';
 import WarehouseList from "./components/DeleteWarehouseModal/DeleteWarehouseModal";
 import InventoryList from "./components/DeleteInventoryModal/DeleteInventoryModal";
 import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails.jsx';
-import Styles from './components/zStylesTesting/stylesTest.jsx';
 
 function App() {
   return (
