@@ -130,7 +130,7 @@
         // entries for tablet & desktop query
         &__row {
             display: flex;
-            justify-content: start;
+            justify-content: space-between;
             align-items: center;
             padding: 0 1rem;
 
@@ -141,7 +141,7 @@
 
         &__col {
             display: flex;
-            justify-self: center;
+            justify-content: start;
             align-items: center;
             gap: 0.5rem;
             flex: 1;
@@ -149,7 +149,7 @@
 
         .table-header {
             display: flex;
-            justify-content: center;
+            justify-content: start;
             align-items: center;
 
             &__text {
@@ -178,10 +178,6 @@
         }
 
         .table-cell {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
             &__link {
                 text-decoration: none;
                 font-weight: 600;

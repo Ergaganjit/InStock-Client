@@ -53,7 +53,7 @@ function WarehouseInventory() {
                     <div className="inventory-entry__row inventory-entry__row--actions">
                         <img
                             src={deleteIcon}
-                            alt=""
+                            alt="delete icon"
                             className="delete-button"
                         />
                         <img src={editIcon} alt="" className="edit-button" />
