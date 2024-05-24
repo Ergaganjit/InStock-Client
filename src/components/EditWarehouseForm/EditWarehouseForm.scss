@@ -1,8 +1,10 @@
 @use '../../styles/colors' as colors;
+@use '../../styles/fonts' as fonts;
 
 %bar {
     display: flex;
     flex-direction: column;
+
 }
 
 %foo {
@@ -16,21 +18,52 @@
     display: flex;
     flex-direction: column;
     border-radius: 4px;
+    margin-left: 16px;
+    margin-right: 16px;
+    overflow: hidden;
+    box-shadow: 0px 2px 5px 0px;
+    font-family: "Titillium";
+
 
     &__nav {
         display: flex;
         flex-direction: row;
+        padding-left: 16px;
+        padding-right: 16px;
+        border-bottom: 1px solid colors.$cloud;
     }
 
     &__warehouse-details {
         @extend %bar;
+        margin-left: 16px;
+        margin-right: 16px;
+
     }
 
     &__contact-details {
         @extend %bar;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    &__form-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 68px;
+        width: 343px;
+        background-color: colors.$light-grey;
+
     }
 }
 
+.nav {
+    &__back-button {
+        background: none;
+        border: none;
+    }
+}
 
 .warehouse-details {
 
@@ -83,22 +116,60 @@
 
 
 
-.warehouse-details {
+.contact-details {
 
-    &__warehouse-name {
+    &__contact-name {
         @extend %bar;
     }
 
-    &__street-address {
+    &__position {
         @extend %bar;
     }
 
-    &__city {
+    &__phone-number {
         @extend %bar;
     }
 
-    &__country {
+    &__email {
         @extend %bar;
     }
 }
 
+.contact-name {
+    &__input {
+        @extend %foo;
+    }
+}
+
+.position {
+
+    &__input {
+        @extend %foo;
+    }
+}
+
+.phone-number {
+
+    &__input {
+        @extend %foo;
+    }
+}
+
+.email {
+
+    &__input {
+        @extend %foo;
+    }
+}
+
+.form-buttons {
+    &__cancel-button {
+        width: 139px;
+        height: 36px;
+    }
+
+    &__save-button {
+        width: 139px;
+        height: 36px;
+    }
+}
