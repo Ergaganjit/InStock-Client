@@ -1,7 +1,9 @@
-import React from 'react';
+// src/pages/WarehousePage.jsx
+
+import React, { useState, useEffect } from 'react';
 import "./WarehousePage.scss";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
-import { useState, useEffect } from "react";
+import DeleteWarehouseModal from '../../components/DeleteWarehouseModal/DeleteWarehouseModal';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -9,6 +11,8 @@ const WarehousePage = () => {
   const urlForWarehouseList = "http://localhost:8080/api/warehouses";
 
   const [warehouseToDisplay, setwarehouseToDisplay] = useState([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [warehouseToDelete, setWarehouseToDelete] = useState(null);
 
   useEffect(() => {
     axios
@@ -25,6 +29,26 @@ const WarehousePage = () => {
 
   const handleNewClick = () => {
     navigateNewWarehousePage("/warehouse/add");
+  };
+
+  const openModal = (warehouse) => {
+    setWarehouseToDelete(warehouse);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setWarehouseToDelete(null);
+  };
+
+  const deleteWarehouse = async () => {
+    try {
+      await axios.delete(`http://localhost:8080/api/warehouses/${warehouseToDelete.id}`);
+      setwarehouseToDisplay(warehouseToDisplay.filter(wh => wh.id !== warehouseToDelete.id));
+      closeModal();
+    } catch (error) {
+      console.error('Error deleting warehouse', error);
+    }
   };
 
   return (
@@ -54,7 +78,13 @@ const WarehousePage = () => {
       </div>
       <WarehouseList
         warehouses={warehouseToDisplay}
-        setwarehouseToDisplay={setwarehouseToDisplay}
+        openModal={openModal}
+      />
+      <DeleteWarehouseModal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        warehouseToDelete={warehouseToDelete}
+        deleteWarehouse={deleteWarehouse}
       />
     </div>
   );
