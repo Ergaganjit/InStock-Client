@@ -14,6 +14,7 @@ import InventoryPage from './pages/InventoryPage/InventoryPage.jsx';
 
 import WarehouseList from "./components/DeleteWarehouseModal/DeleteWarehouseModal";
 import InventoryList from "./components/DeleteInventoryModal/DeleteInventoryModal";
+import Styles from './components/zStylesTesting/stylesTest.jsx';
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
             <Route path="/warehouses" element={<WarehouseList/>} />
             <Route path="/inventories" element={<InventoryList/>} />
 
-
+            <Route path="/styles" element={<Styles/>} />
           </Routes>
         </div>
         <Footer />
