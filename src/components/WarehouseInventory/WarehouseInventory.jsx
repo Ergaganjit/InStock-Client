@@ -6,7 +6,9 @@ import axios from 'axios';
 
 function WarehouseInventory() {
     const [inventory, setInventory] = useState([]);
+    const [warehouses, setWarehouses] = useState([]);
     const serverInventoryUrl = "http://localhost:8080/api/inventories";
+    const serverWarehouseUrl = "http://localhost:8080/api/warehouses";
 
     useEffect(() => {
         const fetchInventory = async () => {
@@ -18,7 +20,18 @@ function WarehouseInventory() {
                 console.error(error);
             }
         }
+
+        const fetchWarehouses = async () => {
+            try {
+                const response = await axios.get(serverWarehouseUrl);
+                setWarehouses(response.data);
+                console.log(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        }
         fetchInventory();
+        fetchWarehouses();
     }, []);
 
     return (
@@ -43,7 +56,7 @@ function WarehouseInventory() {
                     + Add New Item
                 </button>
             </section>
-            <InventoryList inventory={inventory} />
+            <InventoryList inventory={inventory} warehouses={warehouses} />
         </div>
     );
 }

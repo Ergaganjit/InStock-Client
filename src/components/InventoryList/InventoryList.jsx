@@ -3,15 +3,18 @@ import { Link } from 'react-router-dom';
 import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import editIcon from '../../assets/Icons/edit-24px.svg';
 
-function InventoryList({ inventory }) {
-    function InventoryListMobile({ inventory }) {
+function InventoryList({ inventory, warehouses }) {
+    function InventoryListMobile({ inventory, warehouses }) {
         function InventoryListEntry({
             itemName,
             status,
             category,
             quantity,
             warehouse,
+            warehouses
         }) {
+            const selectedWarehouse = warehouses.find((currentWarehouse) => currentWarehouse.id === warehouse);
+
             return (
                 <article className="inventory-entry">
                     <div className="inventory-entry__row inventory-entry__row--item-status">
@@ -51,7 +54,7 @@ function InventoryList({ inventory }) {
                         <div className="inventory-entry__col inventory-entry__col--warehouse">
                             <p className="inventory-entry__label">WAREHOUSE</p>
                             <p className="inventory-entry__col-data">
-                                {warehouse}
+                                {selectedWarehouse.warehouse_name}
                             </p>
                         </div>
                     </div>
@@ -81,20 +84,24 @@ function InventoryList({ inventory }) {
                         category={item.category}
                         quantity={item.quantity}
                         warehouse={item.warehouse_id}
+                        warehouses={warehouses}
                     />
                 ))}
             </section>
         );
     }
 
-    function InventoryListTabletDesktop({ inventory }) {
+    function InventoryListTabletDesktop({ inventory, warehouses }) {
         function InventoryListTableEntry({
             itemName,
             status,
             category,
             quantity,
             warehouse,
+            warehouses
         }) {
+            const selectedWarehouse = warehouses.find((currentWarehouse) => currentWarehouse.id === warehouse);
+
             return (
                 <div className="inventory-list__row inventory-list__row--table-entry">
                     <div className="inventory-list__col table-cell">
@@ -121,7 +128,7 @@ function InventoryList({ inventory }) {
                     </div>
                     <div className="inventory-list__col table-cell">
                         <p className="table-cell__data table-cell__data--warehouse">
-                            {warehouse}
+                            {selectedWarehouse.warehouse_name}
                         </p>
                     </div>
                     <div className="inventory-list__col table-cell">
@@ -190,6 +197,7 @@ function InventoryList({ inventory }) {
                         category={item.category}
                         quantity={item.quantity}
                         warehouse={item.warehouse_id}
+                        warehouses={warehouses}
                     />
                 ))}
             </section>
@@ -199,8 +207,8 @@ function InventoryList({ inventory }) {
     return (
         <>
             {/* only one type InventoryList is displayed based on media query */}
-            <InventoryListMobile inventory={inventory} />
-            <InventoryListTabletDesktop inventory={inventory} />
+            <InventoryListMobile inventory={inventory} warehouses={warehouses} />
+            <InventoryListTabletDesktop inventory={inventory} warehouses={warehouses} />
         </>
     );
 }
