@@ -37,7 +37,7 @@ export default function WarehouseDetails() {
                         <img className="back-button__image" src={backArrow} onClick={() => navigate(`/`)} />
                     </button>
                     <h1 className="nav__warehouse-heading">{wareHouseDetails?.warehouse_name}</h1>
-                    <Link className="nav__edit-link" to={`/${wareHouseDetails?.id}/edit`}>
+                    <Link className="nav__edit-link" to={`/warehouse/${wareHouseDetails?.id}/edit`}>
                         <button className="edit-link__edit-button">
                             <img className="edit-button__image" src={editIcon} alt="edit icon" />
                             <label className="edit-button__label">Edit</label>
