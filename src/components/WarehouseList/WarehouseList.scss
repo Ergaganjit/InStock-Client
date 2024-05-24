@@ -1,0 +1,188 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
+
+.warehouse-info {
+  border-bottom: 1px solid #bdc5d5;
+  cursor: grab;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+
+  &:hover {
+    background-color: $cloud;
+  }
+
+  @include tablet {
+    align-items: center;
+    width: 80%;
+    padding: 1rem 10%;
+  }
+
+  @include desktop {
+    padding: 1rem 10%;
+    width: 80%;
+  }
+
+  &__name-container {
+    display: flex;
+
+    @include tablet {
+      flex-basis: 50%;
+      align-items: center;
+    }
+
+    @include desktop {
+      flex-basis: 51.5%;
+    }
+  }
+
+  &__delete-edit {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+    padding-top: 1rem;
+
+    @include tablet {
+      padding: 0;
+      width: auto;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+
+    @include desktop {
+      flex-basis: 16.5%;
+    }
+  }
+
+  &__phone-email-container {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @include desktop {
+      flex-basis: 19%;
+      flex-direction: column;
+    }
+  }
+
+  &__title-warehouse-heading,
+  &__address-heading,
+  &__contact-name-heading,
+  &__contact-info-heading {
+    font-family: "Titillium Web", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1rem;
+    color: #5c667e;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    @include tablet {
+      margin: 1rem 0;
+      display: none;
+    }
+  }
+
+  &__arrow {
+    @include tablet {
+      width: 1.5rem;
+    }
+  }
+
+  &__mobile-flex-first,
+  &__mobile-flex-second {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__mobile-flex-first {
+    width: 48%;
+
+    @include tablet {
+      width: 40.5%;
+    }
+
+    @include desktop {
+      width: 41.5%;
+    }
+  }
+
+  &__mobile-flex-second {
+    width: 52%;
+
+    @include tablet {
+      width: 49%;
+    }
+
+    @include desktop {
+      width: 41.5%;
+    }
+  }
+
+  &__address,
+  &__name,
+  &__contact-name,
+  &__phone,
+  &__email {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 0.5rem 0;
+
+    @include tablet {
+      margin: 0;
+      padding: 0;
+    }
+    @include desktop {
+      padding: 0;
+    }
+  }
+
+  &__address {
+    width: 60%;
+
+    @include tablet {
+      max-width: 14ch;
+    }
+
+    @include desktop {
+      max-width: 25ch;
+    }
+  }
+
+  &__name {
+    font-weight: 600;
+    color: $instock-indigo;
+    padding-bottom: 0.75rem;
+    @include tablet {
+      padding-bottom: 0;
+    }
+    @include desktop {
+      padding-bottom: 0;
+    }
+  }
+
+  &__contact-name {
+    padding-bottom: 0.75rem;
+    @include tablet {
+      flex-basis: 47.5%;
+    }
+
+    @include desktop {
+      flex-basis: 57.5%;
+    }
+  }
+}
