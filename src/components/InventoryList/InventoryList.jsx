@@ -76,11 +76,11 @@ function InventoryList({ inventory }) {
                 {inventory.map((item) => (
                     <InventoryListEntry
                         key={item.id}
-                        itemName={item.itemName}
+                        itemName={item.item_name}
                         status={item.status}
                         category={item.category}
                         quantity={item.quantity}
-                        warehouse={item.warehouse}
+                        warehouse={item.warehouse_id}
                     />
                 ))}
             </section>
@@ -185,11 +185,11 @@ function InventoryList({ inventory }) {
                 {inventory.map((item) => (
                     <InventoryListTableEntry
                         key={item.id}
-                        itemName={item.itemName}
+                        itemName={item.item_name}
                         status={item.status}
                         category={item.category}
                         quantity={item.quantity}
-                        warehouse={item.warehouse}
+                        warehouse={item.warehouse_id}
                     />
                 ))}
             </section>

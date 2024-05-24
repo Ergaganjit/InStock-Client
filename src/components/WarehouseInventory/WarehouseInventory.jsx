@@ -1,18 +1,25 @@
 import './WarehouseInventory.scss';
 import searchIcon from '../../assets/Icons/search-24px.svg';
 import InventoryList from '../InventoryList/InventoryList';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-function WarehouseInventory({ inventory }) {
-    const testInventory = [
-        {
-            id: 1,
-            itemName: 'Television',
-            category: 'Electronics',
-            status: 'IN STOCK',
-            quantity: '500',
-            warehouse: 'Manhattan',
-        },
-    ];
+function WarehouseInventory() {
+    const [inventory, setInventory] = useState([]);
+    const serverInventoryUrl = "http://localhost:8080/api/inventories";
+
+    useEffect(() => {
+        const fetchInventory = async () => {
+            try {
+                const response = await axios.get(serverInventoryUrl);
+                setInventory(response.data);
+
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        fetchInventory();
+    }, []);
 
     return (
         <div className="warehouse-inventory">
@@ -36,7 +43,7 @@ function WarehouseInventory({ inventory }) {
                     + Add New Item
                 </button>
             </section>
-            <InventoryList inventory={testInventory} />
+            <InventoryList inventory={inventory} />
         </div>
     );
 }
