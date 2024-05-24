@@ -40,6 +40,47 @@
 
 }
 
+%H1 {
+    @include mixins.tablet {
+        font-family: "Titillium";
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
+        text-align: left;
+    }
+}
+
+%H2 {
+    @include mixins.tablet {
+        font-family: "Titillium";
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        text-align: left;
+    }
+}
+
+%H3 {
+    @include mixins.tablet {
+        font-family: "Titillium";
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 22px;
+        text-align: left;
+    }
+}
+
+%P2 {
+    @include mixins.tablet {
+        font-family: "Titillium";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        text-align: left;
+    }
+}
+
+
 %label {
     margin-bottom: 4px;
 }
@@ -52,11 +93,15 @@
     width: 295px;
     border: 1px solid colors.$cloud;
     box-sizing: border-box;
-    @extend %M-P2;
     margin-bottom: 24px;
 
     @include mixins.tablet {
         height: 38px;
+        width: 287.5px;
+    }
+
+    @include mixins.desktop {
+        width: 429px;
     }
 }
 
@@ -68,12 +113,18 @@
     border-radius: 4px;
     margin: auto;
     overflow: hidden;
-    box-shadow: 0px 2px 5px 0px;
+    box-shadow: 0px 2px 5px 0px colors.$primary-color;
     font-family: "Titillium";
     width: 343px;
     color: colors.$primary-color;
 
+    @include mixins.tablet {
+        width: 704px;
+    }
 
+    @include mixins.desktop {
+        width: 1020px;
+    }
 
     &__nav {
         display: flex;
@@ -83,17 +134,55 @@
         padding-top: 16px;
         border-bottom: 1px solid colors.$cloud;
         align-items: center;
+
+        @include mixins.desktop {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+    &__details-container {
+        @include mixins.tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-right: 24px;
+            margin-left: 24px;
+        }
+
+        @include mixins.desktop {
+            margin-right: 36px;
+            margin-left: 36px;
+        }
     }
 
     &__warehouse-details {
         @extend %flex-col;
         padding-left: 24px;
         border-bottom: 1px solid colors.$cloud;
+
+        @include mixins.tablet {
+            padding-left: 0;
+            border-bottom: none;
+            border-right: 1px solid colors.$cloud;
+            padding-right: 36px;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        @include mixins.desktop {
+            padding-right: 48px;
+        }
     }
 
     &__contact-details {
         @extend %flex-col;
         padding-left: 24px;
+
+        @include mixins.tablet {
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
     }
 
     &__form-buttons {
@@ -103,6 +192,12 @@
         align-items: center;
         height: 68px;
         background-color: colors.$light-grey;
+
+        @include mixins.tablet {
+            justify-content: flex-end;
+            height: 70px;
+            gap: 10px;
+        }
     }
 }
 
@@ -114,14 +209,15 @@
         height: 24px;
         margin-right: 8px;
 
+        @include mixins.tablet {
+            margin-right: 16px;
+        }
     }
 
     &__heading {
-        font-family: "Titillium";
-        font-size: 28px;
-        font-weight: 600;
-        line-height: 36px;
-        text-align: left;
+        @extend %M-H1;
+
+
     }
 }
 
@@ -133,6 +229,10 @@
         font-weight: 600;
         line-height: 28px;
         text-align: left;
+
+        @include mixins.tablet {
+            margin-top: 0;
+        }
     }
 
     &__warehouse-name {
@@ -162,6 +262,7 @@
     }
 
     &__input {
+        @extend %M-P2;
         @extend %form-field;
     }
 }
@@ -174,6 +275,7 @@
     }
 
     &__input {
+        @extend %M-P2;
         @extend %form-field;
     }
 }
@@ -186,6 +288,7 @@
     }
 
     &__input {
+        @extend %M-P2;
         @extend %form-field;
     }
 }
@@ -198,7 +301,9 @@
     }
 
     &__input {
+        @extend %M-P2;
         @extend %form-field;
+
     }
 }
 
@@ -212,6 +317,10 @@
         font-weight: 600;
         line-height: 28px;
         text-align: left;
+
+        @include mixins.tablet {
+            margin-top: 0;
+        }
     }
 
     &__contact-name {
@@ -239,6 +348,7 @@
     }
 
     &__input {
+        @extend %M-P2;
         @extend %form-field;
     }
 }
@@ -251,6 +361,7 @@
     }
 
     &__input {
+        @extend %M-P2;
         @extend %form-field;
     }
 }
@@ -263,6 +374,7 @@
     }
 
     &__input {
+        @extend %M-P2;
         @extend %form-field;
     }
 }
@@ -275,18 +387,54 @@
     }
 
     &__input {
+        @extend %M-P2;
         @extend %form-field;
     }
 }
 
 .form-buttons {
+
     &__cancel-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
         width: 139px;
         height: 36px;
+        border-radius: 20px;
+        border: 1px solid colors.$cloud;
+        padding: 8px, 51px, 8px, 51px;
+        background-color: colors.$white;
+        @extend %M-P2;
+
+        @include mixins.tablet {
+            width: 61px;
+            height: 38px;
+        }
     }
 
     &__save-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
         width: 139px;
         height: 36px;
+        border-radius: 20px;
+        border: 1px solid colors.$cloud;
+        padding: 8px, 51px, 8px, 51px;
+        background-color: colors.$instock-indigo;
+        color: white;
+        @extend %M-P2;
+
+        @include mixins.tablet {
+            width: 61px;
+            height: 38px;
+            margin-right: 24px;
+        }
+
+        @include mixins.desktop {
+            margin-right: 36px;
+        }
     }
 }

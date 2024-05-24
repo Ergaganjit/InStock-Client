@@ -30,36 +30,134 @@
   flex-direction: column;
 }
 
+.nav__heading {
+  font-family: "Titillium";
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+  text-align: left;
+}
+
+.email__label, .phone-number__label, .position__label, .contact-name__label, .country__label, .city__label, .street-address__label, .warehouse-name__label {
+  font-family: "Titillium";
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+}
+
+.form-buttons__save-button, .form-buttons__cancel-button, .email__input, .phone-number__input, .position__input, .contact-name__input, .country__input, .city__input, .street-address__input, .warehouse-name__input {
+  font-family: "Titillium";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+}
+
+.email__label, .phone-number__label, .position__label, .contact-name__label, .country__label, .city__label, .street-address__label, .warehouse-name__label {
+  margin-bottom: 4px;
+}
+
 .email__input, .phone-number__input, .position__input, .contact-name__input, .country__input, .city__input, .street-address__input, .warehouse-name__input {
-  border-radius: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 20px;
+  height: 36px;
+  width: 295px;
   border: 1px solid #BDC5D5;
-  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+}
+@media only screen and (min-width: 768px) {
+  .email__input, .phone-number__input, .position__input, .contact-name__input, .country__input, .city__input, .street-address__input, .warehouse-name__input {
+    height: 38px;
+    width: 287.5px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .email__input, .phone-number__input, .position__input, .contact-name__input, .country__input, .city__input, .street-address__input, .warehouse-name__input {
+    width: 429px;
+  }
 }
 
 .editWarehouseForm {
   display: flex;
   flex-direction: column;
   border-radius: 4px;
-  margin-left: 16px;
-  margin-right: 16px;
+  margin: auto;
   overflow: hidden;
-  box-shadow: 0px 2px 5px 0px;
+  box-shadow: 0px 2px 5px 0px #13182C;
   font-family: "Titillium";
+  width: 343px;
+  color: #13182C;
+}
+@media only screen and (min-width: 768px) {
+  .editWarehouseForm {
+    width: 704px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .editWarehouseForm {
+    width: 1020px;
+  }
 }
 .editWarehouseForm__nav {
   display: flex;
   flex-direction: row;
   padding-left: 16px;
   padding-right: 16px;
+  padding-top: 16px;
   border-bottom: 1px solid #BDC5D5;
+  align-items: center;
+}
+@media only screen and (min-width: 1280px) {
+  .editWarehouseForm__nav {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .editWarehouseForm__details-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 24px;
+    margin-left: 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .editWarehouseForm__details-container {
+    margin-right: 36px;
+    margin-left: 36px;
+  }
 }
 .editWarehouseForm__warehouse-details {
-  margin-left: 16px;
-  margin-right: 16px;
+  padding-left: 24px;
+  border-bottom: 1px solid #BDC5D5;
+}
+@media only screen and (min-width: 768px) {
+  .editWarehouseForm__warehouse-details {
+    padding-left: 0;
+    border-bottom: none;
+    border-right: 1px solid #BDC5D5;
+    padding-right: 36px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .editWarehouseForm__warehouse-details {
+    padding-right: 48px;
+  }
 }
 .editWarehouseForm__contact-details {
-  margin-left: 16px;
-  margin-right: 16px;
+  padding-left: 24px;
+}
+@media only screen and (min-width: 768px) {
+  .editWarehouseForm__contact-details {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
 }
 .editWarehouseForm__form-buttons {
   display: flex;
@@ -67,20 +165,92 @@
   justify-content: space-evenly;
   align-items: center;
   height: 68px;
-  width: 343px;
   background-color: #F7F8F9;
+}
+@media only screen and (min-width: 768px) {
+  .editWarehouseForm__form-buttons {
+    justify-content: flex-end;
+    height: 70px;
+    gap: 10px;
+  }
 }
 
 .nav__back-button {
   background: none;
   border: none;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
 }
-
+@media only screen and (min-width: 768px) {
+  .nav__back-button {
+    margin-right: 16px;
+  }
+}
+.warehouse-details__heading {
+  font-family: "Titillium";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: left;
+}
+@media only screen and (min-width: 768px) {
+  .warehouse-details__heading {
+    margin-top: 0;
+  }
+}
+.contact-details__heading {
+  font-family: "Titillium";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: left;
+}
+@media only screen and (min-width: 768px) {
+  .contact-details__heading {
+    margin-top: 0;
+  }
+}
 .form-buttons__cancel-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 139px;
   height: 36px;
+  border-radius: 20px;
+  border: 1px solid #BDC5D5;
+  padding: 8px, 51px, 8px, 51px;
+  background-color: #FFFFFF;
+}
+@media only screen and (min-width: 768px) {
+  .form-buttons__cancel-button {
+    width: 61px;
+    height: 38px;
+  }
 }
 .form-buttons__save-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 139px;
   height: 36px;
+  border-radius: 20px;
+  border: 1px solid #BDC5D5;
+  padding: 8px, 51px, 8px, 51px;
+  background-color: #2E66E5;
+  color: white;
+}
+@media only screen and (min-width: 768px) {
+  .form-buttons__save-button {
+    width: 61px;
+    height: 38px;
+    margin-right: 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .form-buttons__save-button {
+    margin-right: 36px;
+  }
 }/*# sourceMappingURL=EditWarehouseForm.css.map */
