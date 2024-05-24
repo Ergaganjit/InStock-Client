@@ -4,7 +4,6 @@ import Header from "../src/components/header/header.jsx";
 import Footer from "../src/components/footer/footer.jsx";
 
 import WarehousePage from "./pages/WarehousePage/WarehousePage.jsx";
-// import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage.jsx";
 // import EditWarehousePage from './pages/EditWarehousePage/EditWarehousePage.jsx';
 // import AddWarehousePage from './pages/AddWarehousePage/AddWarehousePage.jsx';
 import InventoryPage from './pages/InventoryPage/InventoryPage.jsx';
@@ -14,6 +13,7 @@ import InventoryPage from './pages/InventoryPage/InventoryPage.jsx';
 
 import WarehouseList from "./components/DeleteWarehouseModal/DeleteWarehouseModal";
 import InventoryList from "./components/DeleteInventoryModal/DeleteInventoryModal";
+import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails.jsx';
 import Styles from './components/zStylesTesting/stylesTest.jsx';
 
 function App() {
@@ -24,7 +24,8 @@ function App() {
         <div className="routes-container">
           <Routes>
             <Route path='/' element={<WarehousePage/>} />
-            {/* <Route path='/warehouse/:id' element={<WarehouseDetailsPage />} />
+            <Route path='/warehouse/:wareHouseId' element={<WarehouseDetails />} />
+            {/*
             <Route path='/warehouse/edit/:id' element={<EditWarehousePage/>} />
             <Route path='/warehouse/add' element={<AddWarehousePage />} /> */}
             <Route path='/inventory' element={<InventoryPage />} />
