@@ -1,0 +1,471 @@
+@use '../../styles/colors' as colors;
+@use '../../styles/fonts' as fonts;
+@use '../../styles/mixins' as mixins;
+
+%flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+%M-H1 {
+    font-family: "Titillium";
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: left;
+}
+
+%M-H2 {
+    font-family: "Titillium";
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    text-align: left;
+}
+
+%M-H3 {
+    font-family: "Titillium";
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: left;
+}
+
+%M-P2 {
+    font-family: "Titillium";
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+
+}
+
+%H1 {
+    @include mixins.tablet {
+        font-family: "Titillium";
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
+        text-align: left;
+    }
+}
+
+%H2 {
+    @include mixins.tablet {
+        font-family: "Titillium";
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        text-align: left;
+    }
+}
+
+%H3 {
+    @include mixins.tablet {
+        font-family: "Titillium";
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 22px;
+        text-align: left;
+    }
+}
+
+%P2 {
+    @include mixins.tablet {
+        font-family: "Titillium";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        text-align: left;
+    }
+}
+
+
+%label {
+    margin-bottom: 4px;
+}
+
+%form-field {
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 20px;
+    height: 36px;
+    width: 295px;
+    border: 1px solid colors.$cloud;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+
+    @include mixins.tablet {
+        height: 38px;
+        width: 287.5px;
+    }
+
+    @include mixins.desktop {
+        width: 429px;
+    }
+}
+
+
+
+.editWarehouseForm {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0px 2px 5px 0px colors.$primary-color;
+    font-family: "Titillium";
+    width: 343px;
+    color: colors.$primary-color;
+
+    @include mixins.tablet {
+        width: 704px;
+    }
+
+    @include mixins.desktop {
+        width: 1020px;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 16px;
+        border-bottom: 1px solid colors.$cloud;
+        align-items: center;
+
+        @include mixins.desktop {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+    &__details-container {
+        @include mixins.tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-right: 24px;
+            margin-left: 24px;
+        }
+
+        @include mixins.desktop {
+            margin-right: 36px;
+            margin-left: 36px;
+        }
+    }
+
+    &__warehouse-details {
+        @extend %flex-col;
+        padding-left: 24px;
+        border-bottom: 1px solid colors.$cloud;
+
+        @include mixins.tablet {
+            padding-left: 0;
+            border-bottom: none;
+            border-right: 1px solid colors.$cloud;
+            padding-right: 36px;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        @include mixins.desktop {
+            padding-right: 48px;
+        }
+    }
+
+    &__contact-details {
+        @extend %flex-col;
+        padding-left: 24px;
+
+        @include mixins.tablet {
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__form-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 68px;
+        background-color: colors.$light-grey;
+
+        @include mixins.tablet {
+            justify-content: flex-end;
+            height: 70px;
+            gap: 10px;
+        }
+    }
+}
+
+.nav {
+    &__back-button {
+        background: none;
+        border: none;
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+
+        @include mixins.tablet {
+            margin-right: 16px;
+        }
+    }
+
+    &__heading {
+        @extend %M-H1;
+
+
+    }
+}
+
+.warehouse-details {
+
+    &__heading {
+        font-family: "Titillium";
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+        text-align: left;
+
+        @include mixins.tablet {
+            margin-top: 0;
+        }
+    }
+
+    &__warehouse-name {
+        @extend %flex-col;
+    }
+
+    &__street-address {
+        @extend %flex-col;
+    }
+
+    &__city {
+        @extend %flex-col;
+    }
+
+    &__country {
+        @extend %flex-col;
+    }
+}
+
+
+
+.warehouse-name {
+
+    &__label {
+        @extend %M-H3;
+        @extend %label;
+    }
+
+    &__input {
+        @extend %M-P2;
+        @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
+    }
+}
+
+.street-address {
+
+    &__label {
+        @extend %M-H3;
+        @extend %label;
+    }
+
+    &__input {
+        @extend %M-P2;
+        @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
+    }
+}
+
+.city {
+
+    &__label {
+        @extend %M-H3;
+        @extend %label;
+    }
+
+    &__input {
+        @extend %M-P2;
+        @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
+    }
+}
+
+.country {
+
+    &__label {
+        @extend %M-H3;
+        @extend %label;
+    }
+
+    &__input {
+        @extend %M-P2;
+        @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
+    }
+}
+
+
+
+.contact-details {
+
+    &__heading {
+        font-family: "Titillium";
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+        text-align: left;
+
+        @include mixins.tablet {
+            margin-top: 0;
+        }
+    }
+
+    &__contact-name {
+        @extend %flex-col;
+    }
+
+    &__position {
+        @extend %flex-col;
+    }
+
+    &__phone-number {
+        @extend %flex-col;
+    }
+
+    &__email {
+        @extend %flex-col;
+    }
+}
+
+.contact-name {
+
+    &__label {
+        @extend %M-H3;
+        @extend %label;
+    }
+
+    &__input {
+        @extend %M-P2;
+        @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
+    }
+}
+
+.position {
+
+    &__label {
+        @extend %M-H3;
+        @extend %label;
+    }
+
+    &__input {
+        @extend %M-P2;
+        @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
+    }
+}
+
+.phone-number {
+
+    &__label {
+        @extend %M-H3;
+        @extend %label;
+    }
+
+    &__input {
+        @extend %M-P2;
+        @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
+    }
+}
+
+.email {
+
+    &__label {
+        @extend %M-H3;
+        @extend %label;
+    }
+
+    &__input {
+        @extend %M-P2;
+        @extend %form-field;
+
+        &--error {
+            border: 1px solid colors.$red;
+        }
+    }
+}
+
+.form-buttons {
+
+    &__cancel-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 139px;
+        height: 36px;
+        border-radius: 20px;
+        border: 1px solid colors.$cloud;
+        padding: 8px, 51px, 8px, 51px;
+        background-color: colors.$white;
+        @extend %M-P2;
+
+        @include mixins.tablet {
+            width: 61px;
+            height: 38px;
+        }
+    }
+
+    &__save-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 139px;
+        height: 36px;
+        border-radius: 20px;
+        border: 1px solid colors.$cloud;
+        padding: 8px, 51px, 8px, 51px;
+        background-color: colors.$instock-indigo;
+        color: white;
+        @extend %M-P2;
+
+        @include mixins.tablet {
+            width: 61px;
+            height: 38px;
+            margin-right: 24px;
+        }
+
+        @include mixins.desktop {
+            margin-right: 36px;
+        }
+    }
+}
