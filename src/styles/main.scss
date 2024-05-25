@@ -2,6 +2,17 @@
 @import './fonts';
 @import './partials/button';
 
+html {
+
+    @include tablet {
+        height: 1024px;
+    }
+
+    @include tablet {
+        height: 925px;
+    }
+}
+
 .everything-container {
     margin-left: 16px;
     margin-right: 16px;
