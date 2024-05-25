@@ -1,9 +1,8 @@
 import './AddWarehouseForm.scss';
 import backArrow from '../../assets/Icons/arrow_back-24px.svg';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-
 
 
 export default function AddWarehouseForm() {
