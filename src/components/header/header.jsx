@@ -6,8 +6,11 @@ import LogoSvg from '../../assets/Logo/InStock-Logo.svg';
 const Header = () => {
   return (
     <header className="header">
+      <div className='header__container'>
       <div className="header__logo">
-        <img src={LogoSvg} alt="Instock Logo" />
+        <NavLink to="/">
+          <img src={LogoSvg} alt="Instock Logo" />
+        </NavLink>
       </div>
       <nav className="header__nav">
         <NavLink
@@ -27,6 +30,7 @@ const Header = () => {
           Inventory
         </NavLink>
       </nav>
+      </div>
     </header>
   );
 };
