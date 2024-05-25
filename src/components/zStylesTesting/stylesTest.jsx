@@ -1,10 +1,7 @@
 import React from 'react';
-import './stylesTest.scss'
+
 import textIcon from '../../assets/Icons/chevron_right-24px.svg';
-import WarehouseList from "../../components/WarehouseList/WarehouseList";
-import DeleteWarehouseModal from '../../components/DeleteWarehouseModal/DeleteWarehouseModal';
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+
 
 const Styles = () => {
   return (
@@ -38,7 +35,7 @@ const Styles = () => {
 
         <div className='new-item'>
         <p>Text link:</p>
-          <a href="#" className="text-link">
+          <a href="/" className="text-link">
             Manhattan
             <img src={textIcon} alt="Text icon" className="text-link-icon" />
           </a>
