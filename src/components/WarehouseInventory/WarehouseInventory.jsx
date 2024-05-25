@@ -15,7 +15,6 @@ function WarehouseInventory() {
             try {
                 const response = await axios.get(serverInventoryUrl);
                 setInventory(response.data);
-
             } catch (error) {
                 console.error(error);
             }
@@ -25,11 +24,11 @@ function WarehouseInventory() {
             try {
                 const response = await axios.get(serverWarehouseUrl);
                 setWarehouses(response.data);
-                console.log(response.data);
             } catch (error) {
                 console.error(error);
             }
         }
+        
         fetchInventory();
         fetchWarehouses();
     }, []);
