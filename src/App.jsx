@@ -8,8 +8,8 @@ import WarehousePage from "./pages/WarehousePage/WarehousePage.jsx";
 // import AddWarehousePage from './pages/AddWarehousePage/AddWarehousePage.jsx';
 import InventoryPage from './pages/InventoryPage/InventoryPage.jsx';
 // import InventoryDetailsPage from './pages/InventoryDetailsPage/InventoryDetailsPage.jsx';
-// import EditInventoryPage from './pages/EditInventoryPage/EditInventoryPage.jsx';
-// import AddInventoryPage from './pages/AddInventoryPage/AddInventoryPage.jsx';
+import EditInventoryPage from './pages/EditInventoryPage/EditInventoryPage.jsx';
+import AddInventoryPage from './pages/AddInventoryPage/AddInventoryPage.jsx';
 
 import WarehouseList from "./components/DeleteWarehouseModal/DeleteWarehouseModal";
 import InventoryList from "./components/DeleteInventoryModal/DeleteInventoryModal";
@@ -33,9 +33,9 @@ function App() {
             <Route path='/warehouse/edit/:id' element={<EditWarehousePage/>} />
             <Route path='/warehouse/add' element={<AddWarehousePage />} /> */}
             <Route path='/inventory' element={<InventoryPage />} />
-            {/* <Route path='/inventory/:id' element={<InventoryDetailsPage />} />
+            {/* <Route path='/inventory/:id' element={<InventoryDetailsPage />} /> */}
             <Route path='/inventory/edit/:id' element={<EditInventoryPage />} />
-            <Route path='/inventory/add' element={<AddInventoryPage/>} /> */}
+            <Route path='/inventory/add' element={<AddInventoryPage/>} />
 
             <Route path="/warehouses" element={<WarehouseList/>} />
             <Route path="/inventories" element={<InventoryList/>} />
