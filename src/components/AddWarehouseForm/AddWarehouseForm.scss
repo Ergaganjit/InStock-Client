@@ -112,14 +112,20 @@
     flex-direction: column;
     border-radius: 4px;
     margin: auto;
+    background-color: colors.$white;
     overflow: hidden;
     box-shadow: 0px 2px 5px 0px colors.$primary-color;
     font-family: "Titillium";
     width: 343px;
     color: colors.$primary-color;
+    z-index: 2;
+    position: sticky;
+    transform: translateY(-70px);
+
 
     @include mixins.tablet {
         width: 704px;
+        transform: translateY(-99.47px);
     }
 
     @include mixins.desktop {
