@@ -1,97 +1,6 @@
 @import "../../styles/mixins";
 @import "../../styles/colors";
 
-// .header {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     background-color: $graphite;
-//     height: 200px;
-//     position: relative;
-//     z-index: 1;
-
-//     @include tablet {
-//         flex-direction: row;
-//         justify-content: space-between;
-//         height: 186px;
-//         }
-
-//     @include desktop {
-//         flex-direction: row;
-//         justify-content: space-between;
-//         padding: 0 auto;
-//         }
-
-//     &__container {
-
-//       @include desktop {
-//       max-width: 1020px;
-//       }
-//     }
-  
-//     &__logo {
-//         margin-top: 24px;
-//         margin-bottom: 24px;
-
-//       @include tablet {
-//         margin-top: 32px;
-//         margin-bottom: auto;
-//         margin-left: 32px;
-//         }
-      
-//         img {
-//           max-width: 100%;
-//           height: auto;
-//         }
-//     }
-  
-//     &__nav {
-//         display: flex;
-//         justify-content: space-between;
-//         padding: 0 16px;
-//         width: 100%;
-//         position: relative;
-//         z-index: 1;
-
-//       @include tablet {
-//         justify-content: flex-end;
-//         width: auto;
-//         margin-top: 28px;
-//         margin-bottom: auto;
-//         }
-//     }
-  
-//     &__link {
-//         text-decoration: none;
-//         color: $cloud;
-//         font-size: 13px;
-//         height: 28px;
-//         flex: 1;
-//         text-align: center;
-//         margin: 0 16px 16px 16px;
-//         padding-top: 8px;
-
-//         @include tablet {
-//           font-size: 14px;
-//           height: 30px;
-//           padding-top: 8px;
-//           padding-left: 16px;
-//           padding-right: 16px;
-//         }
-    
-//         &:hover {
-//           color: $white;
-//           text-decoration: underline;
-//         }
-    
-//         &--active {
-//           background-color: $primary-color;
-//           border-radius: 20px;
-//           color: $white;
-//         }
-//     }
-// }
-
 .header {
   
   background-color: $graphite;
@@ -123,8 +32,6 @@
     }
 
     @include desktop {
-      // flex-direction: row;
-      // justify-content: space-between;
       padding: 0 auto;
       max-width: 1020px;
       margin-left: auto;
