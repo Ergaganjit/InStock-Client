@@ -1,0 +1,284 @@
+/* media query for tablet */
+/* media query for desktop */
+/* Regular */
+@font-face {
+  font-family: "Titillium";
+  src: url("../assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+/* Bold */
+@font-face {
+  font-family: "Titillium";
+  src: url("../assets/fonts/Titillium_Web/TitilliumWeb-Bold.ttf") format("truetype");
+  font-weight: 600;
+}
+/* font setting */
+.page__header {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 600;
+}
+
+.page__subheader {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.nav__warehouse-heading {
+  font-family: "Titillium";
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+  text-align: left;
+}
+
+.contact-info-container__contact-info, .contact-name-container__contact, .address-container__city-country, .address-container__address {
+  font-family: "Titillium";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+}
+
+.contact-info-container__heading, .contact-name-container__heading, .address-container__heading {
+  font-family: "Titillium";
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: left;
+}
+
+.contact-info-container__contact-info, .contact-name-container__contact, .address-container__city-country, .address-container__address {
+  font-family: "Titillium";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav__warehouse-heading {
+    font-family: "Titillium";
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .contact-info-container__heading, .contact-name-container__heading, .address-container__heading {
+    font-family: "Titillium";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .contact-info-container__contact-info, .contact-name-container__contact, .address-container__city-country, .address-container__address {
+    font-family: "Titillium";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+  }
+}
+
+.warehouseDetails {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  width: 343px;
+  box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1019607843);
+  z-index: 2;
+  position: sticky;
+  transform: translateY(-70px);
+}
+@media only screen and (min-width: 768px) {
+  .warehouseDetails {
+    width: 704px;
+    transform: translateY(-110.09px);
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .warehouseDetails {
+    width: 1020px;
+  }
+}
+.warehouseDetails__nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #BDC5D5;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .warehouseDetails__nav {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .warehouseDetails__nav {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+.warehouseDetails__info-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #BDC5D5;
+  background-color: white;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .warehouseDetails__info-container {
+    flex-direction: row;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-bottom: none;
+    justify-content: baseline;
+    align-items: baseline;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .warehouseDetails__info-container {
+    padding-left: 32px;
+  }
+}
+
+.nav__back-button {
+  background: none;
+  border: none;
+  height: 24px;
+  width: 24px;
+  margin-right: 16px;
+}
+.nav__warehouse-heading {
+  color: #13182C;
+}
+.nav__edit-link {
+  margin-left: auto;
+  text-decoration: none;
+}
+
+.edit-link__edit-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #2E66E5;
+  border: 0;
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+}
+@media only screen and (min-width: 768px) {
+  .edit-link__edit-button {
+    height: 38px;
+    width: 81px;
+    border-radius: 20px;
+    padding: 8px, 16px, 8px, 16px;
+    gap: 4px;
+  }
+}
+
+.edit-button__image {
+  filter: brightness(0) invert(1);
+  height: 20px;
+  width: 20px;
+}
+.edit-button__label {
+  display: none;
+  color: #FFFFFF;
+}
+@media only screen and (min-width: 768px) {
+  .edit-button__label {
+    display: inline-block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .info-container__address-container {
+    border-right: 1px solid #BDC5D5;
+  }
+}
+.info-container__contact-container {
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (min-width: 768px) {
+  .info-container__contact-container {
+    margin-left: 36px;
+    gap: 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .info-container__contact-container {
+    gap: 128px;
+  }
+}
+
+.address-container__heading {
+  color: #5C667E;
+}
+.address-container__inner-container {
+  display: flex;
+  flex-direction: row;
+}
+@media only screen and (min-width: 768px) {
+  .address-container__inner-container {
+    flex-direction: column;
+    width: 214px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .address-container__inner-container {
+    margin-right: 128px;
+  }
+}
+.address-container__address {
+  color: #13182C;
+}
+@media only screen and (min-width: 768px) {
+  .address-container__address {
+    margin: 0;
+  }
+}
+.address-container__city-country {
+  color: #13182C;
+}
+@media only screen and (min-width: 768px) {
+  .address-container__city-country {
+    margin: 0;
+  }
+}
+
+.contact-name-container__heading {
+  color: #5C667E;
+}
+.contact-name-container__contact {
+  color: #13182C;
+}
+@media only screen and (min-width: 768px) {
+  .contact-name-container__contact {
+    width: 142px;
+  }
+}
+
+.contact-info-container__heading {
+  color: #5C667E;
+}
+.contact-info-container__contact-info {
+  color: #13182C;
+}/*# sourceMappingURL=WarehouseDetails.css.map */

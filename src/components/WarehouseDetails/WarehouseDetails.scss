@@ -99,13 +99,18 @@
     border-radius: 4px;
     width: 343px;
     box-shadow: 0px 2px 5px 0px #13182C1A;
+    z-index: 2;
+    position: sticky;
+    transform: translateY(-70px);
 
     @include mixins.tablet {
         width: 704px;
+        transform: translateY(-110.09px);
     }
 
     @include mixins.desktop {
         width: 1020px;
+
     }
 
     &__nav {
@@ -200,7 +205,7 @@
 
 .edit-button {
     &__image {
-        filter: invert(1);
+        filter: brightness(0) invert(1);
         height: 20px;
         width: 20px;
     }
