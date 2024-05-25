@@ -16,6 +16,7 @@ import InventoryList from "./components/DeleteInventoryModal/DeleteInventoryModa
 import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails.jsx';
 import EditWarehouseForm from './components/EditWarehouseForm/EditWarehouseForm.jsx';
 import Styles from './components/zStylesTesting/stylesTest.jsx';
+import AddWarehouseForm from './components/AddWarehouseForm/AddWarehouseForm.jsx';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path='/' element={<WarehousePage/>} />
             <Route path='/warehouse/:wareHouseId' element={<WarehouseDetails/>} />
             <Route path='/warehouse/:wareHouseId/edit' element={<EditWarehouseForm/>} />
+            <Route path='/warehouse/add' element={<AddWarehouseForm/>} />
             {/*
             <Route path='/warehouse/edit/:id' element={<EditWarehousePage/>} />
             <Route path='/warehouse/add' element={<AddWarehousePage />} /> */}
