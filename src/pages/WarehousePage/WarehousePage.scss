@@ -27,7 +27,7 @@
     padding-left: 32px;
     padding-right: 32px;
     position: relative;
-    top: -50px;
+    top: -64px;
     z-index: 10;
     background-color: #ffffff;
     border-radius: 4px;
@@ -37,7 +37,7 @@
       margin-left: 0px;
       margin-right: 0px;
       justify-content: space-between;
-      top: -100px;
+      top: -95px;
     }
 
     @include desktop {
@@ -56,7 +56,7 @@
     font-size: 28px;
     font-weight: 600;
     line-height: 36px;
-    padding: 3.25rem 0 1.5rem 0;
+    padding: 32px 0 16px 0;
 
     @include tablet {
       font-size: 32px;
@@ -80,9 +80,8 @@
 
   &__search-box {
     height: 34px;
-    width: 100%;
+    width: 94%;
     margin-bottom: 16px;
-    background-position: right;
     padding-left: 16px;
     border: 1px solid $cloud;
     font-family: "Titillium Web", sans-serif;
@@ -115,9 +114,11 @@
     cursor: grab;
     height: 3.1rem;
     width: 100%;
+    margin-bottom: 24px;
 
     @include tablet {
       height: 2.5rem;
+      margin-bottom: 0;
     }
   }
 
@@ -126,7 +127,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 0 32px;
+    padding: 0 32px 24px 32px;
+    
     
     @include tablet {
       border-bottom: none;
@@ -134,7 +136,8 @@
       flex-direction: row;
       justify-content: space-between;
       margin-top: 32px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
+      padding: 0 32px;
     }
   }
 
@@ -151,6 +154,10 @@
       font-weight: 600;
       align-items: center;
       padding: 0 32px;
+    }
+
+    @include desktop {
+      padding: 0 40px;
     }
   }
 
