@@ -10,23 +10,10 @@ const InventoryList = ({ inventory }) => {
     const [inventories, setInventories] = useState([]);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [inventoryToDelete, setInventoryToDelete] = useState(null);
-    
-    // useEffect(() => {
-    //     fetchInventories();
-    // }, []);
 
     useEffect(() => {
         setInventories(inventory);
     }, [inventory]); // items will not load unless inventory is a dependency, for some reason...
-
-    // const fetchInventories = async () => {
-    //     try {
-    //         const response = await axios.get('http://localhost:8080/api/inventories');
-    //         setInventories(response.data);
-    //     } catch (error) {
-    //         console.error('Error fetching inventories', error);
-    //     }
-    // };
 
     const openModal = (inventory) => {
         setInventoryToDelete(inventory);
@@ -100,6 +87,7 @@ const InventoryList = ({ inventory }) => {
                 </article>
             );
         };
+        
         return (
             <section className="inventory-list inventory-list--mobile">
                 {inventoryMobile.map(item => (
@@ -109,9 +97,7 @@ const InventoryList = ({ inventory }) => {
         );
     };
 
-    const InventoryListTabletDesktop = ({ inventoryTabletDesktop }) => {
-        // console.log('invTD:', inventoryTabletDesktop);
-        
+    const InventoryListTabletDesktop = ({ inventoryTabletDesktop }) => {        
         const InventoryListTableEntry = ({ item }) => {
             const { id, item_name, status, category, quantity, warehouse_name } = item;
             const outOfStockClass = (status === "In Stock" ? "" : "out-of-stock");
@@ -214,6 +200,7 @@ const InventoryList = ({ inventory }) => {
         </>
     );
 };
+
 export default InventoryList;
 
 
