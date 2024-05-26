@@ -8,9 +8,9 @@ import { Navigate, useNavigate } from "react-router-dom";
 function WarehouseInventory() {
   const navigate = useNavigate();
   const [inventory, setInventory] = useState([]);
-  const [warehouses, setWarehouses] = useState([]);
-  const serverInventoryUrl = "http://localhost:8080/api/inventories";
-  const serverWarehouseUrl = "http://localhost:8080/api/warehouses";
+//   const [warehouses, setWarehouses] = useState([]);
+  const serverInventoryUrl = `${process.env.REACT_APP_API_URL}/api/inventories`;
+//   const serverWarehouseUrl = `${process.env.REACT_APP_API_URL}/api/warehouses;`
 
   useEffect(() => {
     const fetchInventory = async () => {
@@ -22,17 +22,17 @@ function WarehouseInventory() {
       }
     };
 
-    const fetchWarehouses = async () => {
-      try {
-        const response = await axios.get(serverWarehouseUrl);
-        setWarehouses(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    // const fetchWarehouses = async () => {
+    //   try {
+    //     const response = await axios.get(serverWarehouseUrl);
+    //     setWarehouses(response.data);
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // };
 
     fetchInventory();
-    fetchWarehouses();
+    // fetchWarehouses();
   }, []);
 
   const handleAddClick = (event) => {
@@ -61,7 +61,7 @@ function WarehouseInventory() {
           + Add New Item
         </button>
       </section>
-      <InventoryList inventory={inventory} warehouses={warehouses} />
+      <InventoryList inventory={inventory} />
     </div>
   );
 }
