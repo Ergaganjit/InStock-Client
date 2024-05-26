@@ -7,6 +7,8 @@ import axios from 'axios';
 
 export default function AddWarehouseForm() {
 
+    const apiUrl = "http://localhost:8080";
+
     const params = useParams();
     const navigate = useNavigate();
 
@@ -16,7 +18,7 @@ export default function AddWarehouseForm() {
         if (button === 'save') {
             try {
                 console.log(wareHouseDetails);
-                await axios.post(`${process.env.REACT_APP_API_URL}/api/warehouses`, wareHouseDetails);
+                await axios.post(`${apiUrl}/api/warehouses`, wareHouseDetails);
                 console.log("Warehouse added successfully.");
                 navigate(`/`);
             } catch (error) {
