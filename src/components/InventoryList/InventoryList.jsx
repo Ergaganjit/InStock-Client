@@ -39,7 +39,7 @@ const InventoryList = () => {
     };
     const InventoryListMobile = ({ inventory }) => {
         const InventoryListEntry = ({ item }) => {
-            const { item_name, status, category, quantity, warehouse_name } = item;
+            const { id, item_name, status, category, quantity, warehouse_name } = item;
             const outOfStockClass = (status === "In Stock" ? "" : "out-of-stock");
             return (
                 <article className="inventory-entry">
@@ -98,7 +98,7 @@ const InventoryList = () => {
     };
     const InventoryListTabletDesktop = ({ inventory }) => {
         const InventoryListTableEntry = ({ item }) => {
-            const { item_name, status, category, quantity, warehouse_name } = item;
+            const { id, item_name, status, category, quantity, warehouse_name } = item;
             const outOfStockClass = (status === "In Stock" ? "" : "out-of-stock");
             return (
                 <div className="inventory-list__row inventory-list__row--table-entry">
