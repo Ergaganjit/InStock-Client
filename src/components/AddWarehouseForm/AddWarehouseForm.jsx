@@ -49,7 +49,7 @@ export default function AddWarehouseForm() {
             <div className="addWarehouseForm__nav-container">
                 <div className="addWarehouseForm__nav">
                     <button className="nav__back-button">
-                        <img className="back-button__image" src={backArrow} />
+                        <img className="back-button__image" src={backArrow} onClick={() => navigate(`/`)} />
                     </button>
                     <h2 className="nav__heading">Add Warehouse</h2>
                 </div>
