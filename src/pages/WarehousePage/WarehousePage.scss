@@ -1,37 +1,66 @@
-@use "../../styles/colors" as *;
-@use "../../styles/mixins" as *;
+// @use "../../styles/colors" as *;
+// @use "../../styles/mixins" as *;
+@use "../../styles/partials/button" as *;
 
 .warehouse {
   background-color: #ffffff;
-  border-radius: 0.5rem;
+  
+  @include tablet {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
 
+  @include desktop {
+    max-width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+ 
+  
   &__everything-container {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    position: relative;
+    top: -64px;
+    z-index: 10;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+
     @include tablet {
-      padding-left: 10%;
-      padding-right: 10%;
+      margin-left: 0px;
+      margin-right: 0px;
+      justify-content: space-between;
+      top: -95px;
     }
+
     @include desktop {
       justify-content: space-between;
-      padding-left: 10%;
-      padding-right: 10%;
+      width: 1020px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 40px;
+      padding-right: 40px;
     }
   }
 
   &__heading {
     margin: 0;
     font-family: "Titillium Web", sans-serif;
-    font-size: 2.25rem;
+    font-size: 28px;
     font-weight: 600;
-    line-height: 2.25rem;
-    padding: 3.25rem 0 1.5rem 0;
+    line-height: 36px;
+    padding: 32px 0 16px 0;
 
     @include tablet {
-      font-size: 2rem;
+      font-size: 32px;
+      line-height: 40px;
       padding: 0;
     }
   }
@@ -40,29 +69,37 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.25rem;
-    margin-bottom: 1rem;
+    width: 100%;
 
     @include tablet {
       flex-direction: row;
       align-items: center;
+      justify-content: right;
     }
   }
 
   &__search-box {
-    height: 3.1rem;
-    width: 100%;
-    background-position: right;
-    padding: 0 1rem;
+    height: 34px;
+    width: 94%;
+    margin-bottom: 16px;
+    padding-left: 16px;
     border: 1px solid $cloud;
     font-family: "Titillium Web", sans-serif;
     font-weight: 400;
-    border-radius: 1.5rem;
+    border-radius: 20px;
     background: transparent url("../../assets/Icons/search-24px.svg") no-repeat
       13px center;
-    background-position: right;
+    background-position: 93% 50%;
+
     @include tablet {
-      height: 2.5rem;
+      height: 36px;
+      max-width: 185px;
+      margin-bottom: 0px;
+      margin-right: 16px;
+    }
+
+    @include desktop {
+      max-width: 274px;
     }
   }
 
@@ -77,9 +114,11 @@
     cursor: grab;
     height: 3.1rem;
     width: 100%;
+    margin-bottom: 24px;
 
     @include tablet {
       height: 2.5rem;
+      margin-bottom: 0;
     }
   }
 
@@ -88,16 +127,17 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding-bottom: 1rem;
-    padding: 0 2rem;
-    padding-bottom: 1rem;
-
+    padding: 0 32px 24px 32px;
+    
+    
     @include tablet {
       border-bottom: none;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      margin-top: 1.5rem;
+      margin-top: 32px;
+      margin-bottom: 24px;
+      padding: 0 32px;
     }
   }
 
@@ -113,7 +153,11 @@
       font-family: "Titillium Web", sans-serif;
       font-weight: 600;
       align-items: center;
-      padding: 0 2rem;
+      padding: 0 32px;
+    }
+
+    @include desktop {
+      padding: 0 40px;
     }
   }
 

@@ -62,7 +62,9 @@ const WarehousePage = () => {
               type="text"
               placeholder="Search..."
             ></input>
-            <button onClick={handleNewClick} className="warehouse__button">
+            <button
+            onClick={handleNewClick}
+            className="button button--primary">
               + Add New Warehouse
             </button>
           </div>

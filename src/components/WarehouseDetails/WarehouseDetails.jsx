@@ -4,7 +4,7 @@ import editIcon from '../../assets/Icons/edit-24px.svg';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-// import InventoryList from '../InventoryList/InventoryList';
+import InventoryList from '../InventoryList/InventoryList';
 
 
 export default function WarehouseDetails() {
@@ -13,6 +13,7 @@ export default function WarehouseDetails() {
     const navigate = useNavigate();
 
     const [wareHouseDetails, setWareHouseDetails] = useState(null);
+    const [inventory, setInventory] = useState(null);
 
     useEffect(() => {
         async function fetchWareHouseDetails() {
@@ -24,7 +25,19 @@ export default function WarehouseDetails() {
                 console.log("Error fetching warehouse details.");
             }
         }
+
+        async function fetchInventory() {
+            try {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/warehouses/${params.wareHouseId}/inventories`);
+                setInventory(response.data);
+                console.log("Successfully fetched inventory.");
+            } catch (error) {
+                console.log("Error fetching inventory.");
+            }
+        }
+
         fetchWareHouseDetails();
+        fetchInventory();
     }, [])
 
 
@@ -66,10 +79,13 @@ export default function WarehouseDetails() {
                         </div>
                     </div>
                 </div>
+                
+                {
+                    inventory ? <InventoryList inventory={inventory} warehouseDetails={wareHouseDetails} /> : "Fetching inventory"
+                }
 
             </div>
 
-        {/* <InventoryList /> */}
         </>
     );
 }
