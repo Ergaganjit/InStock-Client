@@ -8,9 +8,8 @@ import { Navigate, useNavigate } from "react-router-dom";
 function WarehouseInventory() {
   const navigate = useNavigate();
   const [inventory, setInventory] = useState([]);
-//   const [warehouses, setWarehouses] = useState([]);
-  const serverInventoryUrl = `${process.env.REACT_APP_API_URL}/api/inventories`;
-//   const serverWarehouseUrl = `${process.env.REACT_APP_API_URL}/api/warehouses;`
+  const serverBaseUrl = 'http://localhost:8080';
+  const serverInventoryUrl = `${serverBaseUrl}/api/inventories`;
 
   useEffect(() => {
     const fetchInventory = async () => {
@@ -22,17 +21,7 @@ function WarehouseInventory() {
       }
     };
 
-    // const fetchWarehouses = async () => {
-    //   try {
-    //     const response = await axios.get(serverWarehouseUrl);
-    //     setWarehouses(response.data);
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    // };
-
     fetchInventory();
-    // fetchWarehouses();
   }, []);
 
   const handleAddClick = (event) => {
