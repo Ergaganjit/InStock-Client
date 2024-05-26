@@ -9,6 +9,8 @@ import InventoryList from '../InventoryList/InventoryList';
 
 export default function WarehouseDetails() {
 
+    const apiUrl = "http://localhost:8080";
+
     const params = useParams();
     const navigate = useNavigate();
 
@@ -18,7 +20,7 @@ export default function WarehouseDetails() {
     useEffect(() => {
         async function fetchWareHouseDetails() {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/warehouses/${params.wareHouseId}`);
+                const response = await axios.get(`${apiUrl}/api/warehouses/${params.wareHouseId}`);
                 setWareHouseDetails(response.data);
                 console.log("Successfully fetched warehouse details.");
             } catch (error) {
@@ -28,7 +30,7 @@ export default function WarehouseDetails() {
 
         async function fetchInventory() {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/warehouses/${params.wareHouseId}/inventories`);
+                const response = await axios.get(`${apiUrl}/api/warehouses/${params.wareHouseId}/inventories`);
                 setInventory(response.data);
                 console.log("Successfully fetched inventory.");
             } catch (error) {

@@ -8,6 +8,8 @@ import axios from 'axios';
 
 export default function EditWarehouseForm() {
 
+    const apiUrl = "http://localhost:8080";
+
     const params = useParams();
     const navigate = useNavigate();
 
@@ -17,7 +19,7 @@ export default function EditWarehouseForm() {
     useEffect(() => {
         async function fetchWareHouseDetails() {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/warehouses/${params.wareHouseId}`);
+                const response = await axios.get(`${apiUrl}/api/warehouses/${params.wareHouseId}`);
                 setWareHouseDetails(response.data);
                 console.log("Successfully fetched warehouse details.");
             } catch (error) {
@@ -32,7 +34,7 @@ export default function EditWarehouseForm() {
         if (button === 'save' && !error.empty && !error.emailInvalid  && !error.phoneInvalid) {
             try {
                 console.log(wareHouseDetails);
-                await axios.put(`${process.env.REACT_APP_API_URL}/api/warehouses/${params.wareHouseId}`, wareHouseDetails);
+                await axios.put(`${apiUrl}/api/warehouses/${params.wareHouseId}`, wareHouseDetails);
                 console.log("Warehouse details updated successfully.");
                 navigate(`/warehouse/${params.wareHouseId}`);
             } catch (error) {
