@@ -21,7 +21,7 @@ function InventoryList({ inventory, warehouses }) {
                             <p className="inventory-entry__label">
                                 INVENTORY ITEM
                             </p>
-                            <Link className="inventory-entry__link">
+                            <Link className="inventory-entry__link" to={`/inventory/${id}`}>
                                 <p className="inventory-entry__col-data inventory-entry__col-data--item">
                                     {itemName}
                                 </p>
@@ -102,7 +102,7 @@ function InventoryList({ inventory, warehouses }) {
             return (
                 <div className="inventory-list__row inventory-list__row--table-entry">
                     <div className="inventory-list__col table-cell">
-                        <Link className="table-cell__link">
+                        <Link className="table-cell__link" to={`/inventory/${id}`}>
                             <p className="table-cell__data table-cell__data--item">
                                 {itemName}
                             </p>
