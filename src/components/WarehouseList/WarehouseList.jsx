@@ -10,7 +10,7 @@ const WarehouseList = ({ warehouses, openModal }) => {
   const navigateEditPage = useNavigate();
 
   const handleEditClick = (id) => {
-    navigateEditPage(`/warehouse/edit/${id}`);
+    navigateEditPage(`/warehouse/${id}/edit`);
   };
 
   return (
