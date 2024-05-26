@@ -214,7 +214,7 @@ const EditInventoryForm = ({ warehouseFilter, inventoryToDisplay }) => {
           >
             Cancel
           </button>
-          <button type="submit" className="inventory-edit-form__save-button">
+          <button onClick={handleUpdateSaved} type="submit" className="inventory-edit-form__save-button">
             Save
           </button>
         </div>
