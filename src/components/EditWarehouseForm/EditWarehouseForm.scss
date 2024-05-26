@@ -113,13 +113,18 @@
     border-radius: 4px;
     margin: auto;
     overflow: hidden;
-    box-shadow: 0px 2px 5px 0px colors.$primary-color;
+    background-color: colors.$white;
+    box-shadow: 0px 2px 5px 0px #13182C1A;
     font-family: "Titillium";
     width: 343px;
     color: colors.$primary-color;
+    z-index: 2;
+    position: sticky;
+    transform: translateY(-70px);
 
     @include mixins.tablet {
         width: 704px;
+        transform: translateY(-99.47px);
     }
 
     @include mixins.desktop {
@@ -135,9 +140,14 @@
         border-bottom: 1px solid colors.$cloud;
         align-items: center;
 
-        @include mixins.desktop {
+        @include mixins.tablet {
             padding-left: 24px;
             padding-right: 24px;
+        }
+
+        @include mixins.desktop {
+            padding-left: 32px;
+            padding-right: 32px;
         }
     }
 
