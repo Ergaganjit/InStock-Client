@@ -78,11 +78,13 @@ const InventoryList = ({ inventory }) => {
                             className="delete-button"
                             onClick={() => openModal(item)}
                         />
-                        <img
-                            src={editIcon}
-                            alt="edit icon"
-                            className="edit-button"
-                        />
+                        <Link to={`/inventory/edit/${id}`}>
+                            <img
+                                src={editIcon}
+                                alt="edit icon"
+                                className="edit-button"
+                            />
+                        </Link>
                     </div>
                 </article>
             );
@@ -128,11 +130,13 @@ const InventoryList = ({ inventory }) => {
                             alt="delete icon"
                             onClick={() => openModal(item)}
                         />
-                        <img
-                            className="table-cell__data table-cell__data--edit"
-                            src={editIcon}
-                            alt="edit icon"
-                        />
+                        <Link to={`/inventory/edit/${id}`}>
+                            <img
+                                className="table-cell__data table-cell__data--edit"
+                                src={editIcon}
+                                alt="edit icon"
+                            />
+                        </Link>
                     </div>
                 </div>
             );
