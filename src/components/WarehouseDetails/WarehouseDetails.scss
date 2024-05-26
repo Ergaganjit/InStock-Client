@@ -103,9 +103,10 @@
     position: sticky;
     transform: translateY(-70px);
 
+
     @include mixins.tablet {
         width: 704px;
-        transform: translateY(-110.09px);
+        transform: translateY(-99.47px);
     }
 
     @include mixins.desktop {
@@ -120,7 +121,8 @@
         border-bottom: 1px solid colors.$cloud;
         padding-left: 16px;
         padding-right: 16px;
-        padding-top: 16px;
+        padding-top: 5.38px;
+        
 
         @include mixins.tablet {
             padding-left: 24px;
