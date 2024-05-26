@@ -5,42 +5,54 @@ import editIcon from '../../assets/Icons/edit-24px.svg';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DeleteInventoryModal from '../DeleteInventoryModal/DeleteInventoryModal';
-const InventoryList = () => {
+
+const InventoryList = ({ inventory }) => {
     const [inventories, setInventories] = useState([]);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [inventoryToDelete, setInventoryToDelete] = useState(null);
+    
+    // useEffect(() => {
+    //     fetchInventories();
+    // }, []);
+
     useEffect(() => {
-        fetchInventories();
-    }, []);
-    const fetchInventories = async () => {
-        try {
-            const response = await axios.get('http://localhost:8080/api/inventories');
-            setInventories(response.data);
-        } catch (error) {
-            console.error('Error fetching inventories', error);
-        }
-    };
+        setInventories(inventory);
+    }, [inventory]); // items will not load unless inventory is a dependency, for some reason...
+
+    // const fetchInventories = async () => {
+    //     try {
+    //         const response = await axios.get('http://localhost:8080/api/inventories');
+    //         setInventories(response.data);
+    //     } catch (error) {
+    //         console.error('Error fetching inventories', error);
+    //     }
+    // };
+
     const openModal = (inventory) => {
         setInventoryToDelete(inventory);
         setModalIsOpen(true);
     };
+
     const closeModal = () => {
         setModalIsOpen(false);
         setInventoryToDelete(null);
     };
+
     const deleteInventory = async () => {
         try {
-            await axios.delete(`http://localhost:8080/api/inventories/${inventoryToDelete.id}`);
+            await axios.delete(`${process.env.REACT_APP_API_URL}/api/inventories/${inventoryToDelete.id}`);
             setInventories(inventories.filter(inv => inv.id !== inventoryToDelete.id));
             closeModal();
         } catch (error) {
             console.error('Error deleting inventory', error);
         }
     };
-    const InventoryListMobile = ({ inventory }) => {
+
+    const InventoryListMobile = ({ inventoryMobile }) => {
         const InventoryListEntry = ({ item }) => {
             const { id, item_name, status, category, quantity, warehouse_name } = item;
             const outOfStockClass = (status === "In Stock" ? "" : "out-of-stock");
+
             return (
                 <article className="inventory-entry">
                     <div className="inventory-entry__row inventory-entry__row--item-status">
@@ -90,16 +102,20 @@ const InventoryList = () => {
         };
         return (
             <section className="inventory-list inventory-list--mobile">
-                {inventory.map(item => (
+                {inventoryMobile.map(item => (
                     <InventoryListEntry key={item.id} item={item} />
                 ))}
             </section>
         );
     };
-    const InventoryListTabletDesktop = ({ inventory }) => {
+
+    const InventoryListTabletDesktop = ({ inventoryTabletDesktop }) => {
+        // console.log('invTD:', inventoryTabletDesktop);
+        
         const InventoryListTableEntry = ({ item }) => {
             const { id, item_name, status, category, quantity, warehouse_name } = item;
             const outOfStockClass = (status === "In Stock" ? "" : "out-of-stock");
+
             return (
                 <div className="inventory-list__row inventory-list__row--table-entry">
                     <div className="inventory-list__col table-cell">
@@ -135,6 +151,7 @@ const InventoryList = () => {
                 </div>
             );
         };
+
         return (
             <section className="inventory-list inventory-list--tablet-desktop">
                 <div className="inventory-list__row inventory-list__row--table-headers">
@@ -177,16 +194,17 @@ const InventoryList = () => {
                         <p className="table-header__text">ACTIONS</p>
                     </div>
                 </div>
-                {inventory.map(item => (
+                {inventoryTabletDesktop.map(item => (
                     <InventoryListTableEntry key={item.id} item={item} />
                 ))}
             </section>
         );
     };
+
     return (
         <>
-            <InventoryListMobile inventory={inventories} />
-            <InventoryListTabletDesktop inventory={inventories} />
+            <InventoryListMobile inventoryMobile={inventories} />
+            <InventoryListTabletDesktop inventoryTabletDesktop={inventories} />
             <DeleteInventoryModal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
