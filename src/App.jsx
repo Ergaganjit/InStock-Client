@@ -18,6 +18,7 @@ import EditWarehouseForm from './components/EditWarehouseForm/EditWarehouseForm.
 import Styles from './components/zStylesTesting/stylesTest.jsx';
 import AddWarehouseForm from './components/AddWarehouseForm/AddWarehouseForm.jsx';
 import InventoryItemDetails from './components/InventoryDetails/InventoryDetails.jsx';
+import WarehouseInventory from './components/WarehouseInventory/WarehouseInventory.jsx';
 
 function App() {
   return (
@@ -39,7 +40,7 @@ function App() {
             <Route path='/inventory/add' element={<AddInventoryPage/>} />
 
             <Route path="/warehouses" element={<WarehouseList/>} />
-            <Route path="/inventories" element={<InventoryList/>} />
+            <Route path="/inventories" element={<WarehouseInventory />} />
 
             <Route path="/styles" element={<Styles/>} />
           </Routes>
