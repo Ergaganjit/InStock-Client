@@ -5,16 +5,13 @@ import editIcon from '../../assets/Icons/edit-24px.svg';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DeleteInventoryModal from '../DeleteInventoryModal/DeleteInventoryModal';
-
 const InventoryList = () => {
     const [inventories, setInventories] = useState([]);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [inventoryToDelete, setInventoryToDelete] = useState(null);
-
     useEffect(() => {
         fetchInventories();
     }, []);
-
     const fetchInventories = async () => {
         try {
             const response = await axios.get('http://localhost:8080/api/inventories');
@@ -23,17 +20,14 @@ const InventoryList = () => {
             console.error('Error fetching inventories', error);
         }
     };
-
     const openModal = (inventory) => {
         setInventoryToDelete(inventory);
         setModalIsOpen(true);
     };
-
     const closeModal = () => {
         setModalIsOpen(false);
         setInventoryToDelete(null);
     };
-
     const deleteInventory = async () => {
         try {
             await axios.delete(`http://localhost:8080/api/inventories/${inventoryToDelete.id}`);
@@ -43,18 +37,16 @@ const InventoryList = () => {
             console.error('Error deleting inventory', error);
         }
     };
-
     const InventoryListMobile = ({ inventory }) => {
         const InventoryListEntry = ({ item }) => {
             const { item_name, status, category, quantity, warehouse_name } = item;
             const outOfStockClass = (status === "In Stock" ? "" : "out-of-stock");
-
             return (
                 <article className="inventory-entry">
                     <div className="inventory-entry__row inventory-entry__row--item-status">
                         <div className="inventory-entry__col inventory-entry__col--item">
                             <p className="inventory-entry__label">INVENTORY ITEM</p>
-                            <Link className="inventory-entry__link">
+                            <Link className="inventory-entry__link" to={`/inventory/${id}`}>
                                 <p className="inventory-entry__col-data inventory-entry__col-data--item">{item_name}</p>
                             </Link>
                         </div>
@@ -96,7 +88,6 @@ const InventoryList = () => {
                 </article>
             );
         };
-
         return (
             <section className="inventory-list inventory-list--mobile">
                 {inventory.map(item => (
@@ -105,16 +96,14 @@ const InventoryList = () => {
             </section>
         );
     };
-
     const InventoryListTabletDesktop = ({ inventory }) => {
         const InventoryListTableEntry = ({ item }) => {
             const { item_name, status, category, quantity, warehouse_name } = item;
             const outOfStockClass = (status === "In Stock" ? "" : "out-of-stock");
-
             return (
                 <div className="inventory-list__row inventory-list__row--table-entry">
                     <div className="inventory-list__col table-cell">
-                        <Link className="table-cell__link">
+                        <Link className="table-cell__link" to={`/inventory/${id}`}>
                             <p className="table-cell__data table-cell__data--item">{item_name}</p>
                         </Link>
                     </div>
@@ -146,7 +135,6 @@ const InventoryList = () => {
                 </div>
             );
         };
-
         return (
             <section className="inventory-list inventory-list--tablet-desktop">
                 <div className="inventory-list__row inventory-list__row--table-headers">
@@ -195,20 +183,30 @@ const InventoryList = () => {
             </section>
         );
     };
-
     return (
         <>
-            {/* Only one type of InventoryList is displayed based on media query */}
             <InventoryListMobile inventory={inventories} />
             <InventoryListTabletDesktop inventory={inventories} />
-            <DeleteInventoryModal 
-                isOpen={modalIsOpen} 
-                onRequestClose={closeModal} 
-                onDelete={deleteInventory} 
-                inventoryToDelete={inventoryToDelete} 
+            <DeleteInventoryModal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                onDelete={deleteInventory}
+                inventoryToDelete={inventoryToDelete}
             />
         </>
     );
 };
-
 export default InventoryList;
+
+
+
+
+
+
+
+
+
+
+
+
+

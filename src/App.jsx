@@ -17,6 +17,7 @@ import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails.jsx
 import EditWarehouseForm from './components/EditWarehouseForm/EditWarehouseForm.jsx';
 import Styles from './components/zStylesTesting/stylesTest.jsx';
 import AddWarehouseForm from './components/AddWarehouseForm/AddWarehouseForm.jsx';
+import InventoryItemDetails from './components/InventoryDetails/InventoryDetails.jsx';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
             <Route path='/warehouse/edit/:id' element={<EditWarehousePage/>} />
             <Route path='/warehouse/add' element={<AddWarehousePage />} /> */}
             <Route path='/inventory' element={<InventoryPage />} />
-            {/* <Route path='/inventory/:id' element={<InventoryDetailsPage />} /> */}
+            <Route path='/inventory/:id' element={<InventoryItemDetails />} />
             <Route path='/inventory/edit/:id' element={<EditInventoryPage />} />
             <Route path='/inventory/add' element={<AddInventoryPage/>} />
 
