@@ -452,6 +452,11 @@
             width: 61px;
             height: 38px;
         }
+
+        &:hover {
+            border: 1px solid colors.$instock-indigo;
+            color: colors.$instock-indigo;
+        }
     }
 
     &__save-button {
@@ -476,6 +481,10 @@
 
         @include mixins.desktop {
             margin-right: 36px;
+        }
+
+        &:hover {
+            background-color: colors.$graphite;
         }
     }
 }
