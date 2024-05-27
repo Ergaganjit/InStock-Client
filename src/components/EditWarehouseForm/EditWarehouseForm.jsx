@@ -8,15 +8,18 @@ import axios from 'axios';
 
 export default function EditWarehouseForm() {
 
+    const apiUrl = "http://localhost:8080";
+
     const params = useParams();
     const navigate = useNavigate();
 
     const [wareHouseDetails, setWareHouseDetails] = useState(null);
+    const [error, setError] = useState({});
 
     useEffect(() => {
         async function fetchWareHouseDetails() {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/warehouses/${params.wareHouseId}`);
+                const response = await axios.get(`${apiUrl}/api/warehouses/${params.wareHouseId}`);
                 setWareHouseDetails(response.data);
                 console.log("Successfully fetched warehouse details.");
             } catch (error) {
@@ -27,10 +30,11 @@ export default function EditWarehouseForm() {
     }, []);
 
     async function handleClick(button) {
-        if (button === 'save') {
+
+        if (button === 'save' && !error.empty && !error.emailInvalid  && !error.phoneInvalid) {
             try {
                 console.log(wareHouseDetails);
-                await axios.put(`${process.env.REACT_APP_API_URL}/api/warehouses/${params.wareHouseId}`, wareHouseDetails);
+                await axios.put(`${apiUrl}/api/warehouses/${params.wareHouseId}`, wareHouseDetails);
                 console.log("Warehouse details updated successfully.");
                 navigate(`/warehouse/${params.wareHouseId}`);
             } catch (error) {
@@ -38,34 +42,48 @@ export default function EditWarehouseForm() {
             }
         } else if (button === 'cancel') {
             navigate(`/warehouse/${params.wareHouseId}`);
+        } else {
+            alert("Please check all form fields.");
         }
     }
 
     function handleChange(e, key) {
         e.preventDefault();
 
-        console.log(e.target.classList);
-        if (e.target.value === "") {
+        if (e.target.value === "" && e.target.classList.length < 2) {
             e.target.classList.add(`${e.target.className}--error`);
+            setError((prevState) => ({...prevState, empty: true}));
         } else {
             e.target.className = `${e.target.classList[0]}`;
+            setError((prevState) => ({...prevState, empty: false}));
         }
 
-        // if (key === "email" && !isValidEmail(e.target.value)) {
-        //     console.error("Invalid email address");
-        //     e.target.classList.add(`${e.target.className}--error`);
-        //     return;
-        // } else {
-        //     e.target.className = `${e.target.classList[0]}`;
-        // }
+        if (key === "contact_email") {
+            if (!isValidEmail(e.target.value) && e.target.classList.length < 2) {
+                console.error("Invalid email address");
+                console.log(e.target.className);
+                console.log(e.target.classList);
+                e.target.classList.add(`${e.target.className}--error`);
+                setError((prevState) => ({...prevState, emailInvalid: true}));
+            } else {
+                console.log("Valid email");
+                e.target.className = `${e.target.classList[0]}`;
+                setError((prevState) => ({...prevState, emailInvalid: false}));
+            }
+        }
 
-        // if (key === "phone" && !isValidPhoneNumber(e.target.value)) {
-        //     console.error("Invalid phone number");
-        //     e.target.classList.add(`${e.target.className}--error`);
-        //     return;
-        // } else {
-        //     e.target.className = `${e.target.classList[0]}`;
-        // }
+
+        if (key === "contact_phone") {
+            if (!isValidPhoneNumber(e.target.value) && e.target.classList.length < 2) {
+                console.error("Invalid phone number");
+                e.target.classList.add(`${e.target.className}--error`);
+                setError((prevState) => ({...prevState, phoneInvalid: true}));
+            } else {
+                console.log("Valid phone");
+                e.target.className = `${e.target.classList[0]}`;
+                setError((prevState) => ({...prevState, phoneInvalid: false}));
+            }
+        }
 
         setWareHouseDetails({
             ...wareHouseDetails,
@@ -73,13 +91,15 @@ export default function EditWarehouseForm() {
         });
     }
 
-    // function isValidEmail(email) {
-    //     return /\S+@\S+\.\S+/.test(email);
-    // }
+    function isValidEmail(email) {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+    }
 
-    // function isValidPhoneNumber(phone) {
-    //     return /^\d{10}$/.test(phone);
-    // }
+    function isValidPhoneNumber(phone) {
+        const phoneRegex = /^(?:(?:\+|00)\d{1,3})?[ -]?\d{3}[ -]?\d{3}[ -]?\d{4}$/;
+        return phoneRegex.test(phone);
+    }
 
     return (
         <div className="editWarehouseForm">

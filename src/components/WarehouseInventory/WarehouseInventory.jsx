@@ -8,9 +8,8 @@ import { Navigate, useNavigate } from "react-router-dom";
 function WarehouseInventory() {
   const navigate = useNavigate();
   const [inventory, setInventory] = useState([]);
-  const [warehouses, setWarehouses] = useState([]);
-  const serverInventoryUrl = "http://localhost:8080/api/inventories";
-  const serverWarehouseUrl = "http://localhost:8080/api/warehouses";
+  const serverBaseUrl = 'http://localhost:8080';
+  const serverInventoryUrl = `${serverBaseUrl}/api/inventories`;
 
   useEffect(() => {
     const fetchInventory = async () => {
@@ -22,17 +21,7 @@ function WarehouseInventory() {
       }
     };
 
-    const fetchWarehouses = async () => {
-      try {
-        const response = await axios.get(serverWarehouseUrl);
-        setWarehouses(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
     fetchInventory();
-    fetchWarehouses();
   }, []);
 
   const handleAddClick = (event) => {
@@ -64,34 +53,9 @@ function WarehouseInventory() {
       <div>
       <InventoryList inventory={inventory} warehouses={warehouses} />
       </div>
+
     </div>
   );
 };
 
 export default WarehouseInventory;
-
-//        <div className="warehouse-inventory">
-//          <section className="inventory-header">
-//            <h1 className="inventory-header__title">Inventory</h1>
-//            <div className="search">
-//              <input
-//             type="text"
-//             name="inventory-search"
-//             id="inventory-search"
-//             className="search__input"
-//             placeholder="Search..."
-//           />
-//           {/* <img src={searchIcon} alt="search icon" className="search__icon" /> */}
-//         </div>
-//         <button
-//           onClick={handleAddClick}
-//           className="button button--primary">
-//           + Add New Item
-//         </button>
-//       </section>
-//       <InventoryList inventory={inventory} warehouses={warehouses} />
-//     </div>
-//   );
-// };
-
-// export default WarehouseInventory;

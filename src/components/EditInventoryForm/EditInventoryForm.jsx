@@ -46,24 +46,35 @@ const EditInventoryForm = ({ warehouseFilter, inventoryToDisplay }) => {
     navigate("/inventory");
   };
 
-  const handleUpdateSaved = (event) => {
+  const handleUpdateSaved = async (event) => {
     event.preventDefault();
     const selectedWarehouse = warehouseFilter.find(
       (warehouse) => warehouse.warehouse_name === warehouseName
     );
+
+    if (!selectedWarehouse) {
+      setUpdatedMessage("Invalid warehouse name selected");
+      return;
+    }
+
     const urlForInventoryUpdate = `http://localhost:8080/api/inventories/${id}`;
 
-    axios
-      .put(urlForInventoryUpdate, {
+    try {
+      const response = await axios.put(urlForInventoryUpdate, {
         warehouse_id: selectedWarehouse.id,
         item_name: itemName,
         description: description,
         category: category,
         status: status,
-        quantity: quantity,
-      })
-      .then(() => setUpdatedMessage("Thank you for your upload"))
-      .catch((error) => console.log(error));
+        quantity: status === "Out of Stock" ? 0 : quantity,
+      });
+
+      setUpdatedMessage("Inventory item updated successfully");
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+      setUpdatedMessage("An error occurred while updating the inventory item");
+    }
   };
 
   return (
@@ -115,8 +126,8 @@ const EditInventoryForm = ({ warehouseFilter, inventoryToDisplay }) => {
               className="inventory-edit-form__category"
               name="categories"
               id="category"
+              value={category}
             >
-              <option value={category}>{category}</option>
               <option value="Health">Health</option>
               <option value="Gear">Gear</option>
               <option value="Electronics">Electronics</option>
@@ -196,6 +207,7 @@ const EditInventoryForm = ({ warehouseFilter, inventoryToDisplay }) => {
                 className="inventory-edit-form__warehouse"
                 name="categories"
                 id="warehouse"
+                value={warehouseName}
               >
                 {warehouseFilter.map((warehouse, index) => (
                   <option key={index} value={warehouse.warehouse_name}>
@@ -214,7 +226,11 @@ const EditInventoryForm = ({ warehouseFilter, inventoryToDisplay }) => {
           >
             Cancel
           </button>
-          <button type="submit" className="inventory-edit-form__save-button">
+          <button
+            onClick={handleUpdateSaved}
+            type="submit"
+            className="inventory-edit-form__save-button"
+          >
             Save
           </button>
         </div>

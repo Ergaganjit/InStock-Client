@@ -7,16 +7,24 @@ import axios from 'axios';
 
 export default function AddWarehouseForm() {
 
+    const apiUrl = "http://localhost:8080";
+
     const params = useParams();
     const navigate = useNavigate();
 
     const [wareHouseDetails, setWareHouseDetails] = useState(null);
+    const [error, setError] = useState({
+        empty: true,
+        emailInvalid: true,
+        phoneInvalid: true
+    });
 
     async function handleClick(button) {
-        if (button === 'save') {
+
+        if (button === 'save' && !error.empty && !error.emailInvalid && !error.phoneInvalid) {
             try {
                 console.log(wareHouseDetails);
-                await axios.post(`${process.env.REACT_APP_API_URL}/api/warehouses`, wareHouseDetails);
+                await axios.post(`${apiUrl}/api/warehouses`, wareHouseDetails);
                 console.log("Warehouse added successfully.");
                 navigate(`/`);
             } catch (error) {
@@ -24,17 +32,47 @@ export default function AddWarehouseForm() {
             }
         } else if (button === 'cancel') {
             navigate(`/`);
+        } else {
+            alert("Please check all form fields.");
         }
     }
 
     function handleChange(e, key) {
         e.preventDefault();
 
-        console.log(e.target.classList);
-        if (e.target.value === "") {
+        if (e.target.value === "" && e.target.classList.length < 2) {
             e.target.classList.add(`${e.target.className}--error`);
+            setError((prevState) => ({ ...prevState, empty: true }));
         } else {
             e.target.className = `${e.target.classList[0]}`;
+            setError((prevState) => ({ ...prevState, empty: false }));
+        }
+
+        if (key === "contact_email") {
+            if (!isValidEmail(e.target.value) && e.target.classList.length < 2) {
+                console.error("Invalid email address");
+                console.log(e.target.className);
+                console.log(e.target.classList);
+                e.target.classList.add(`${e.target.className}--error`);
+                setError((prevState) => ({ ...prevState, emailInvalid: true }));
+            } else {
+                console.log("Valid email");
+                e.target.className = `${e.target.classList[0]}`;
+                setError((prevState) => ({ ...prevState, emailInvalid: false }));
+            }
+        }
+
+
+        if (key === "contact_phone") {
+            if (!isValidPhoneNumber(e.target.value) && e.target.classList.length < 2) {
+                console.error("Invalid phone number");
+                e.target.classList.add(`${e.target.className}--error`);
+                setError((prevState) => ({ ...prevState, phoneInvalid: true }));
+            } else {
+                console.log("Valid phone");
+                e.target.className = `${e.target.classList[0]}`;
+                setError((prevState) => ({ ...prevState, phoneInvalid: false }));
+            }
         }
 
         setWareHouseDetails({
@@ -43,13 +81,23 @@ export default function AddWarehouseForm() {
         });
     }
 
+    function isValidEmail(email) {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+    }
+
+    function isValidPhoneNumber(phone) {
+        const phoneRegex = /^(?:(?:\+|00)\d{1,3})?[ -]?\d{3}[ -]?\d{3}[ -]?\d{4}$/;
+        return phoneRegex.test(phone);
+    }
+
     return (
         <div className="addWarehouseForm">
 
             <div className="addWarehouseForm__nav-container">
                 <div className="addWarehouseForm__nav">
                     <button className="nav__back-button">
-                        <img className="back-button__image" src={backArrow} />
+                        <img className="back-button__image" src={backArrow} onClick={() => navigate(`/`)} />
                     </button>
                     <h2 className="nav__heading">Add Warehouse</h2>
                 </div>

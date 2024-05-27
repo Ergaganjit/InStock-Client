@@ -23,13 +23,13 @@ const EditInventoryPage = () => {
 
   const urlForWarehouseList = "http://localhost:8080/api/warehouses";
 
-  const [warehouseToDisplay, setwarehouseToDisplay] = useState(null);
+  const [warehouseToDisplay, setWarehouseToDisplay] = useState(null);
 
   useEffect(() => {
     axios
       .get(urlForWarehouseList)
       .then((response) => {
-        setwarehouseToDisplay(response.data);
+        setWarehouseToDisplay(response.data);
       })
       .catch((err) => {
         console.log(err);
