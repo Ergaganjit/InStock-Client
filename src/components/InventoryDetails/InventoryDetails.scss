@@ -1,3 +1,248 @@
-@use "../../styles/partials/button" as *;
+@use '../../styles/colors' as colors;
+@use '../../styles/fonts' as fonts;
+@use '../../styles/mixins' as mixins;
 
-// .invetory-details
+.inventory-details {
+    font-family: "Titillium";
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+    background-color: colors.$white;
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px 0px #13182C1A;
+    z-index: 2;
+    position: sticky;
+    transform: translateY(-70px);
+    padding-left: 8px;
+    padding-right: 8px;
+
+
+    @include mixins.tablet {
+        margin-left: 32px;
+        margin-right: 32px;
+        justify-content: space-between;
+        top: -95px;
+    }
+
+    @include mixins.desktop {
+        justify-content: space-between;
+        width: 1020px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom: 1px solid colors.$cloud;
+        padding-left: 16px;
+        padding-right: 16px;
+        
+
+        @include mixins.tablet {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        @include mixins.desktop {
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+    }
+
+    &__info-container {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid colors.$cloud;
+        background-color: white;
+        padding-left: 16px;
+        padding-right: 16px;
+
+        @include mixins.tablet {
+            flex-direction: row;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            padding-left: 24px;
+            padding-right: 24px;
+            border-bottom: none;
+            justify-content: baseline;
+            align-items: baseline;
+        }
+
+        @include mixins.desktop {
+            padding-left: 32px;
+        }
+    }
+}
+
+.nav {
+
+    &__back-button {
+        background: none;
+        border: none;
+        height: 24px;
+        width: 24px;
+        margin-right: 16px;
+    }
+
+    &__inventory-item-heading {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 36px;
+        text-align: left;
+        color: colors.$primary-color;
+        padding-left: 8px;
+
+        @include mixins.tablet {
+        font-size: 28px;
+        line-height: 36px;
+        }
+    }
+
+    &__edit-link {
+        margin-left: auto;
+        text-decoration: none;
+    }
+}
+
+.edit-link__edit-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: colors.$instock-indigo;
+    border: 0;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+
+    @include mixins.tablet {
+        height: 38px;
+        width: 81px;
+        font-size: 14px;
+        border-radius: 20px;
+        padding: 8px, 16px, 8px, 16px;
+        gap: 4px;
+    }
+}
+
+.edit-button {
+    &__image {
+        filter: brightness(0) invert(1);
+        height: 20px;
+        width: 20px;
+    }
+
+    &__label {
+        display: none;
+        color: colors.$white;
+
+        @include mixins.tablet {
+            display: inline-block;
+        }
+    }
+}
+
+.inventory-item-details {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+
+    @include mixins.tablet {
+        flex-direction: row;
+    }
+
+    &__heading {
+        font-size: 11px;
+        line-height: 16px;
+        font-weight: 600;
+        color: colors.$secondary-color;
+        margin-bottom: 4px;
+
+        @include mixins.tablet {
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+
+    &__text {
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400;
+        text-align: left;
+        color: colors.$primary-color;
+        margin-top: 0;
+
+        @include mixins.tablet {
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+}
+
+.item-info-container {
+    
+    @include mixins.tablet {
+        width: 50%;
+    }
+}
+
+.warehouse-stock-container {
+    display: flex;
+    flex-direction: column;
+
+    @include mixins.tablet {
+        width: 50%;
+        border-left: 1px solid colors.$cloud;
+    }
+}
+
+.stock-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 75%;
+
+    @include mixins.tablet {
+        width: 70%;
+        padding-left: 24px;
+    }
+}
+
+.stock-status {
+    &__status {
+        border-radius: 20px;
+        text-align: center;
+        padding: 4px 8px;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 20px;
+        margin-top: 0;
+
+        @include mixins.tablet {
+            font-size: 14px;
+        }
+
+        &.status-in-stock {
+            color: colors.$green;
+            background-color: colors.$green-background;
+        }
+
+        &.status-out-of-stock {
+            color: colors.$red;
+            background-color: colors.$red-background;
+        }
+    }
+}
+
+.warehouse {
+    margin: 0;
+
+    @include mixins.tablet {
+        padding-left: 24px;
+    }
+}
