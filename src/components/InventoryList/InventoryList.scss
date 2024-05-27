@@ -1,9 +1,16 @@
 @import '../../styles/mixins';
 @import '../../styles/colors';
+@import '../../styles/fonts';
 
 .inventory-list {
     border-top: 1px solid $secondary-color;
     margin: 1rem 0;
+    font-family: "Titillium";
+    font-size: 13px;
+
+    @include tablet {
+        font-size: 14px;
+    }
     
     // entries for mobile query
     .inventory-entry {
@@ -17,7 +24,7 @@
         //labels inside each row div
         &__label {
             margin: 0;
-            font-size: 0.8rem;
+            font-size: 11px;
             font-weight: 600;
             color: $secondary-color;
         }
@@ -51,14 +58,14 @@
 
             &-data--status {
                 color: $green;
-                background-color: palegreen;
-                border-radius: 25px;
+                background-color: $green-background;
+                border-radius: 20px;
                 text-align: center;
-                padding: 0.4rem;
+                padding: 4px;
                 max-width: 5rem;
                 margin: 0.5rem 0;
                 padding: 0.5rem;
-                font-size: 0.8rem;
+                font-size: 13px;
                 font-weight: 600;
             }
         }
@@ -102,7 +109,7 @@
         display: flex;
         justify-content: start;
         align-items: center;
-        font-size: 0.75rem;
+        font-size: 13px;
 
         &__text {
             color: $secondary-color;
@@ -134,15 +141,17 @@
             text-decoration: none;
             font-weight: 600;
             color: $instock-indigo;
+            font-size: 13px;
+            color: $instock-indigo;
         }
 
         &__data {
             &--status {
                 color: $green;
-                background-color: palegreen;
+                background-color: $green-background;
                 padding: 0.5rem;
-                border-radius: 25px;
-                font-size: 0.8rem;
+                border-radius: 20px;
+                font-size: 13px;
                 font-weight: 600;
             }
         }
@@ -164,7 +173,7 @@
     }
 
     .out-of-stock {
-        color: red;
-        background-color: #C9451512;
+        color: $red;
+        background-color: $red-background;
     }
 }

@@ -3,7 +3,6 @@ import WarehouseInventory from '../../components/WarehouseInventory/WarehouseInv
 
 function InventoryPage() {
   return (<>
-    <h2>Inventory Page</h2>
     <WarehouseInventory />
   </>);
 }
