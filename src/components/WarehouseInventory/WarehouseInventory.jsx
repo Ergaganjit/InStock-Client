@@ -49,11 +49,11 @@ function WarehouseInventory() {
             </button>
           </div>
         </div>
+      
+      
+      <InventoryList inventory={inventory} />
+      
       </div>
-      <div>
-      <InventoryList inventory={inventory} warehouses={warehouses} />
-      </div>
-
     </div>
   );
 };

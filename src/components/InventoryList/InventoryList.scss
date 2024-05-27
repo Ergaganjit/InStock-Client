@@ -7,9 +7,11 @@
     margin: 1rem 0;
     font-family: "Titillium";
     font-size: 13px;
+    width: 100%;
 
     @include tablet {
         font-size: 14px;
+        border: none;
     }
     
     // entries for mobile query
@@ -91,6 +93,8 @@
         }
 
         &--table-entry {
+            border-bottom: 1px solid $cloud;
+
             &:hover {
                 background-color: $cloud;
             }

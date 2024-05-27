@@ -77,8 +77,7 @@ const WarehousePage = () => {
           <p className="warehouse__contact-info">CONTACT INFORMATION</p>
           <p className="warehouse__actions">ACTIONS</p>
         </div>
-      </div>
-      <WarehouseList
+            <WarehouseList
         warehouses={warehouseToDisplay}
         openModal={openModal}
       />
@@ -88,6 +87,7 @@ const WarehousePage = () => {
         warehouseToDelete={warehouseToDelete}
         deleteWarehouse={deleteWarehouse}
       />
+      </div>
     </div>
   );
 };
