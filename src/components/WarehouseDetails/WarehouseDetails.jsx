@@ -83,7 +83,7 @@ export default function WarehouseDetails() {
                 </div>
                 
                 {
-                    inventory ? <InventoryList inventory={inventory} warehouseDetails={wareHouseDetails} /> : "Fetching inventory"
+                    inventory ? <InventoryList inventory={inventory} /> : "Fetching inventory"
                 }
 
             </div>
