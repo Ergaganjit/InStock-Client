@@ -1,17 +1,20 @@
 @import './colors';
 @import './fonts';
 @import './partials/button';
+@import './mixins';
 
-html {
+// * {
 
-    @include tablet {
-        height: 1024px;
-    }
+//     font-family: "Titillium";
 
-    @include tablet {
-        height: 925px;
-    }
-}
+//     @include tablet {
+//         height: 1024px;
+//     }
+
+//     @include tablet {
+//         height: 925px;
+//     }
+// }
 
 .everything-container {
     margin-left: 16px;
@@ -33,8 +36,14 @@ html {
 
 .page-header {
     padding: 32px 24px;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 600;
       
     @include tablet {
         padding: 40px 32px 0 0;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
     }
 }
