@@ -1,9 +1,8 @@
-@import '../../styles/mixins';
-@import '../../styles/colors';
+@use '../../styles/mixins' as *;
+@use '../../styles/colors' as *;
 
 .inventory-list {
     border-top: 1px solid $secondary-color;
-    margin: 1rem 0;
 
     @include tablet {
         border: none;
@@ -136,7 +135,6 @@
     }
 
     .table-cell {
-        
         &__link {
             text-decoration: none;
             font-weight: 600;
@@ -155,6 +153,7 @@
         }
     }
 
+    //for displaying one component depending on media query
     &--mobile {
         @include tablet {
             display: none;
