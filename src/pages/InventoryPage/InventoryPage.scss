@@ -1,3 +1,28 @@
 @import '../../styles/mixins';
 @import '../../styles/colors';
 
+.inventory-page {
+    margin: 1.5rem;
+
+    @include tablet {
+        margin: 1.5rem 2.5rem;
+    }
+    
+    @include desktop {
+        margin: 1.5rem 7.5rem;
+    }
+
+    &__content {
+        padding-top: 1.5rem;
+        background-color: white;
+        box-shadow: 0px 2px 5px 0px #13182c1a;
+        border-radius: 4px;
+        position: relative;
+        top: -5rem;
+        z-index: 10;
+
+        @include tablet {
+            top: -7.5rem;
+        }
+    }
+}

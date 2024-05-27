@@ -3,13 +3,13 @@ import WarehouseInventory from '../../components/WarehouseInventory/WarehouseInv
 import './InventoryPage.scss';
 
 function InventoryPage() {
-  return (
-    <section className="inventory-page">
-        <div className="inventory-page__content">
-            <WarehouseInventory />
-        </div>
-    </section>
-  );
+    return (
+        <section className="inventory-page">
+            <div className="inventory-page__content">
+                <WarehouseInventory />
+            </div>
+        </section>
+    );
 }
 
 export default InventoryPage;
