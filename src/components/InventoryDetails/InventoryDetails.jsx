@@ -63,7 +63,7 @@ const InventoryItemDetails = () => {
           <p className="inventory-item-details__text">{inventoryItem.quantity}</p>
         </div>
       </div>
-        <div className="warehouse">
+        <div className="warehouse-item-container">
           <h3 className="inventory-item-details__heading">WAREHOUSE:</h3>
           <p className="inventory-item-details__text">{inventoryItem.warehouse_name}</p>
         </div>
