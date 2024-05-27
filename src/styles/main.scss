@@ -1,0 +1,49 @@
+@import './colors';
+@import './fonts';
+@import './partials/button';
+@import './mixins';
+
+// * {
+
+//     font-family: "Titillium";
+
+//     @include tablet {
+//         height: 1024px;
+//     }
+
+//     @include tablet {
+//         height: 925px;
+//     }
+// }
+
+.everything-container {
+    margin-left: 16px;
+    margin-right: 16px;
+    border: 1px solid #BDC5D5;
+    border-radius: 4px;
+
+    @include tablet {
+        margin-left: 32px;
+        margin-right: 32px;
+      }
+      @include desktop {
+        justify-content: space-between;
+        max-width: 1020px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+}
+
+.page-header {
+    padding: 32px 24px;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 600;
+      
+    @include tablet {
+        padding: 40px 32px 0 0;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+    }
+}
