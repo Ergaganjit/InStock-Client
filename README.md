@@ -1,17 +1,16 @@
-# Getting Started with Create React App
+# InStock Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+InStock Server - https://github.com/Ergaganjit/InStock-Server
 
-## Available Scripts
+## Full Stack Application
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Collaborated on Instock, a Full Stack project developed at BrainStation with three other contributors.
+Utilized React for the front end and Node/Express for the back end, ensuring full responsiveness across mobile, tablet, and desktop platforms. 
+Managed tasks efficiently through Jira.
 
 
-Collaborated on Instock, a Full Stack project developed at BrainStation with three other contributors. Utilized React for the front end and Node/Express for the back end, ensuring full responsiveness across mobile, tablet, and desktop platforms. Managed tasks efficiently through Jira.
+
+
+
 
 
